@@ -608,27 +608,6 @@
       </div>
     </section>
 
-    <!-- 當日流程 -->
-    <section class="section">
-      <div class="eyebrow">WEDDING DAY</div>
-      <h2 class="section-title">當日流程</h2>
-      <p class="sub">建議賓客可於開席前 30 分鐘抵達，從容入席與拍照。</p>
-
-      <div class="timeline">
-        <div class="event">
-          <div class="event-time">11:20</div>
-          <div class="event-name">迎賓・報到</div>
-        </div>
-        <div class="event">
-          <div class="event-time">11:40</div>
-          <div class="event-name">合影・入席</div>
-        </div>
-        <div class="event">
-          <div class="event-time">12:00</div>
-          <div class="event-name">婚宴正式開始</div>
-        </div>
-      </div>
-    </section>
 
     <!-- 相片 -->
     <section class="section">
@@ -684,52 +663,6 @@
       </div>
     </section>
 
-    <!-- RSVP -->
-    <section class="section" id="rsvp">
-      <div class="eyebrow">RSVP</div>
-      <h2 class="section-title">出席回覆</h2>
-      <p class="sub">敬請於 2026 / 09 / 25 前回覆。填寫後可一鍵複製，再貼到 LINE 傳給新人。</p>
-
-      <div class="form">
-        <div class="field">
-          <label for="guestName">姓名</label>
-          <input id="guestName" autocomplete="name" placeholder="請輸入姓名">
-        </div>
-
-        <div class="field">
-          <label for="attendance">是否出席</label>
-          <select id="attendance">
-            <option value="會出席">會出席</option>
-            <option value="無法出席">無法出席</option>
-            <option value="尚未確定">尚未確定</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="guestCount">出席人數</label>
-          <input id="guestCount" type="number" inputmode="numeric" min="0" max="20" value="1">
-        </div>
-
-        <div class="field">
-          <label for="diet">飲食需求</label>
-          <input id="diet" placeholder="例如：葷食、素食、不吃牛…">
-        </div>
-
-        <div class="field">
-          <label for="message">想對新人說的話</label>
-          <textarea id="message" placeholder="留一句祝福給我們 ♡"></textarea>
-        </div>
-
-        <button class="btn btn-primary" type="button" id="copyRsvp">
-          複製 RSVP 回覆內容
-        </button>
-
-        <p class="form-note">
-          此版本不會蒐集或上傳任何資料；所有欄位只在你的裝置上處理。
-          若之後要改成 Google 表單或其他線上回覆系統，可直接替換此區。
-        </p>
-      </div>
-    </section>
 
     <!-- 分享 -->
     <section class="section">
@@ -844,27 +777,6 @@
       copyText(location.href,"喜帖網址已複製");
     });
 
-    // ========= RSVP =========
-    document.getElementById("copyRsvp").addEventListener("click", () => {
-      const name = document.getElementById("guestName").value.trim() || "未填寫";
-      const attendance = document.getElementById("attendance").value;
-      const count = document.getElementById("guestCount").value || "0";
-      const diet = document.getElementById("diet").value.trim() || "無";
-      const message = document.getElementById("message").value.trim() || "無";
-
-      const text =
-`【FLY & BEY 婚禮 RSVP】
-姓名：${name}
-出席：${attendance}
-人數：${count}
-飲食需求：${diet}
-給新人的話：${message}
-
-婚宴日期：2026/10/10
-地點：彭園新板館 8樓夢幻廳`;
-
-      copyText(text,"RSVP 回覆內容已複製，可貼到 LINE");
-    });
 
     // ========= 分享 =========
     document.getElementById("shareBtn").addEventListener("click", async () => {
