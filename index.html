@@ -1,821 +1,2743 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#f8ecec" />
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  >
+
+  <meta
+    name="theme-color"
+    content="#f8ecec"
+  >
 
   <title>FLY & BEY Wedding｜2026.10.10</title>
-  <meta name="description" content="徐啟航 & 李潔苓 婚禮邀請｜2026.10.10 彭園新板館 8樓夢幻廳" />
 
-  <!--
-    FLY & BEY Wedding Invitation
-    ------------------------------------------
-    建議與 index.html 放在同一層：
-    cover.jpg   封面婚紗照
-    photo1.jpg  婚紗照 1
-    photo2.jpg  婚紗照 2
-    photo3.jpg  婚紗照 3
-    bgm.mp3     背景音樂（可選）
-  -->
+  <meta
+    name="description"
+    content="徐啟航 & 李潔苓 婚禮邀請｜2026.10.10 彭園新板館 8樓夢幻廳"
+  >
 
   <style>
-    :root{
-      --bg:#fffaf9;
-      --bg-2:#f9eeee;
-      --pink:#d9adae;
-      --pink-deep:#b77f82;
-      --rose:#a96f74;
-      --wine:#6f4448;
-      --ink:#4d3c3d;
-      --muted:#8b7678;
-      --line:rgba(143,103,107,.20);
-      --paper:rgba(255,255,255,.82);
-      --shadow:0 18px 55px rgba(105,70,74,.13);
-      --radius:28px;
-      --serif:"Songti TC","Noto Serif TC","PMingLiU","Times New Roman",serif;
-      --sans:-apple-system,BlinkMacSystemFont,"PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+
+    :root {
+
+      --bg: #fffaf9;
+      --bg2: #f9eeee;
+
+      --pink: #d9adae;
+      --pink-deep: #b77f82;
+
+      --rose: #a96f74;
+      --wine: #6f4448;
+
+      --ink: #4d3c3d;
+      --muted: #8b7678;
+
+      --line:
+        rgba(143, 103, 107, 0.20);
+
+      --paper:
+        rgba(255, 255, 255, 0.84);
+
+      --shadow:
+        0 18px 55px
+        rgba(105, 70, 74, 0.13);
+
+      --serif:
+        "Songti TC",
+        "Noto Serif TC",
+        "PMingLiU",
+        "Times New Roman",
+        serif;
+
+      --sans:
+        -apple-system,
+        BlinkMacSystemFont,
+        "PingFang TC",
+        "Noto Sans TC",
+        "Microsoft JhengHei",
+        sans-serif;
+
     }
 
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      color:var(--ink);
+
+    * {
+
+      box-sizing: border-box;
+
+    }
+
+
+    html {
+
+      scroll-behavior: smooth;
+
+    }
+
+
+    body {
+
+      margin: 0;
+
+      color: var(--ink);
+
       background:
-        radial-gradient(circle at 10% 0%, rgba(225,186,188,.22), transparent 32%),
-        radial-gradient(circle at 90% 20%, rgba(245,216,214,.38), transparent 26%),
-        linear-gradient(180deg,#fffdfc 0%,var(--bg) 36%,#f9efef 100%);
-      font-family:var(--sans);
-      overflow-x:hidden;
+
+        radial-gradient(
+          circle at 10% 0%,
+          rgba(225, 186, 188, 0.22),
+          transparent 32%
+        ),
+
+        radial-gradient(
+          circle at 90% 20%,
+          rgba(245, 216, 214, 0.38),
+          transparent 26%
+        ),
+
+        linear-gradient(
+          180deg,
+          #fffdfc 0%,
+          var(--bg) 36%,
+          #f9efef 100%
+        );
+
+      font-family: var(--sans);
+
+      overflow-x: hidden;
+
     }
 
-    body::before,
-    body::after{
-      content:"";
-      position:fixed;
-      z-index:-1;
-      width:240px;height:240px;
-      border:1px solid rgba(181,128,132,.12);
-      border-radius:50%;
-      filter:blur(.1px);
-    }
-    body::before{left:-90px;top:18vh}
-    body::after{right:-110px;bottom:7vh}
 
-    a{color:inherit}
-    button,input,select,textarea{font:inherit}
+    a {
 
-    .page{
-      width:min(100%, 760px);
-      margin:0 auto;
-      padding:0 18px 76px;
+      color: inherit;
+
     }
 
-    .section{
-      margin:24px 0;
-      padding:34px 24px;
-      background:var(--paper);
-      border:1px solid rgba(255,255,255,.8);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      backdrop-filter:blur(12px);
-      -webkit-backdrop-filter:blur(12px);
-      position:relative;
-      overflow:hidden;
+
+    button {
+
+      font: inherit;
+
     }
 
-    .section::after{
-      content:"";
-      position:absolute;
-      inset:auto -60px -100px auto;
-      width:190px;height:190px;
-      border-radius:50%;
-      border:1px solid rgba(185,128,132,.14);
-      pointer-events:none;
+
+    .page {
+
+      width: min(100%, 760px);
+
+      margin: 0 auto;
+
+      padding:
+
+        0
+        18px
+        76px;
+
     }
 
-    .eyebrow{
-      font-size:12px;
-      letter-spacing:.28em;
-      text-transform:uppercase;
-      color:var(--rose);
-      font-weight:700;
-    }
 
-    .section-title{
-      margin:10px 0 8px;
-      font-family:var(--serif);
-      font-size:clamp(28px,5vw,38px);
-      font-weight:500;
-      letter-spacing:.06em;
-      color:var(--wine);
-    }
+    .section {
 
-    .sub{
-      margin:0;
-      color:var(--muted);
-      font-size:14px;
-      line-height:1.9;
-    }
+      margin:
+        24px
+        0;
 
-    /* COVER */
-    .hero-wrap{
-      min-height:100svh;
-      display:grid;
-      place-items:center;
-      padding:24px 0;
-    }
+      padding:
+        34px
+        24px;
 
-    .invite-card{
-      width:min(100%, 520px);
-      min-height:82svh;
-      border-radius:34px;
-      position:relative;
-      overflow:hidden;
-      box-shadow:0 26px 70px rgba(91,60,64,.18);
       background:
-        linear-gradient(180deg,rgba(45,25,27,.18),rgba(45,25,27,.36)),
-        linear-gradient(135deg,#dfc0c0,#f5e7e5);
-      isolation:isolate;
-      cursor:pointer;
-      transform-style:preserve-3d;
-      transition:transform .7s cubic-bezier(.2,.8,.2,1), box-shadow .4s ease;
+        var(--paper);
+
+      border:
+        1px solid
+        rgba(255, 255, 255, 0.8);
+
+      border-radius:
+        28px;
+
+      box-shadow:
+        var(--shadow);
+
+      backdrop-filter:
+        blur(12px);
+
+      -webkit-backdrop-filter:
+        blur(12px);
+
     }
 
-    .invite-card:hover{
-      box-shadow:0 30px 78px rgba(91,60,64,.24);
+
+    .eyebrow {
+
+      font-size:
+        12px;
+
+      letter-spacing:
+        0.28em;
+
+      color:
+        var(--rose);
+
+      font-weight:
+        700;
+
     }
 
-    .invite-card.is-open{
-      transform:rotateY(8deg) rotateX(2deg) scale(.985);
+
+    .section-title {
+
+      margin:
+        10px
+        0
+        8px;
+
+      font-family:
+        var(--serif);
+
+      font-size:
+        clamp(
+          28px,
+          5vw,
+          38px
+        );
+
+      font-weight:
+        500;
+
+      letter-spacing:
+        0.06em;
+
+      color:
+        var(--wine);
+
     }
 
-    .hero-photo{
-      position:absolute;inset:0;
-      width:100%;height:100%;
-      object-fit:cover;
-      z-index:-2;
+
+    .sub {
+
+      margin: 0;
+
+      color:
+        var(--muted);
+
+      font-size:
+        14px;
+
+      line-height:
+        1.9;
+
     }
 
-    .hero-vignette{
-      position:absolute;inset:0;z-index:-1;
+
+    /* =========================
+       封面
+       ========================= */
+
+    .hero-wrap {
+
+      min-height:
+        100svh;
+
+      display:
+        grid;
+
+      place-items:
+        center;
+
+      padding:
+        24px
+        0;
+
+    }
+
+
+    .invite-card {
+
+      width:
+        min(
+          100%,
+          520px
+        );
+
+      min-height:
+        82svh;
+
+      border-radius:
+        34px;
+
+      position:
+        relative;
+
+      overflow:
+        hidden;
+
+      box-shadow:
+
+        0
+        26px
+        70px
+        rgba(
+          91,
+          60,
+          64,
+          0.22
+        );
+
       background:
-        linear-gradient(180deg,rgba(54,32,35,.08),rgba(54,32,35,.08) 42%,rgba(54,32,35,.54) 100%),
-        linear-gradient(90deg,rgba(255,255,255,.04),rgba(255,255,255,.01));
+
+        linear-gradient(
+          135deg,
+          #dfc0c0,
+          #f5e7e5
+        );
+
+      cursor:
+        pointer;
+
+      transition:
+
+        transform
+        0.7s
+        cubic-bezier(
+          0.2,
+          0.8,
+          0.2,
+          1
+        );
+
     }
 
-    .hero-top{
-      text-align:center;
-      padding:34px 26px 0;
-      color:white;
-      text-shadow:0 2px 18px rgba(55,35,38,.22);
+
+    .invite-card.is-open {
+
+      transform:
+
+        rotateY(7deg)
+        rotateX(2deg)
+        scale(0.985);
+
     }
 
-    .hero-mark{
-      width:68px;height:68px;
-      margin:0 auto 20px;
-      border:1px solid rgba(255,255,255,.75);
-      border-radius:50%;
-      display:grid;
-      place-items:center;
-      font-family:var(--serif);
-      font-size:22px;
-      letter-spacing:.05em;
-      backdrop-filter:blur(3px);
+
+    .hero-photo {
+
+      position:
+        absolute;
+
+      inset:
+        0;
+
+      width:
+        100%;
+
+      height:
+        100%;
+
+      object-fit:
+        cover;
+
+      object-position:
+        center;
+
     }
 
-    .hero-small{
-      font-size:11px;
-      letter-spacing:.28em;
-      font-weight:700;
+
+    .hero-vignette {
+
+      position:
+        absolute;
+
+      inset:
+        0;
+
+      background:
+
+        linear-gradient(
+          180deg,
+
+          rgba(
+            54,
+            32,
+            35,
+            0.06
+          ),
+
+          rgba(
+            54,
+            32,
+            35,
+            0.10
+          )
+          42%,
+
+          rgba(
+            54,
+            32,
+            35,
+            0.62
+          )
+          100%
+        );
+
     }
 
-    .hero-bottom{
-      position:absolute;
-      left:0;right:0;bottom:0;
-      padding:0 28px 38px;
-      color:white;
-      text-align:center;
+
+    .hero-top {
+
+      position:
+        relative;
+
+      z-index:
+        2;
+
+      text-align:
+        center;
+
+      padding:
+        34px
+        26px
+        0;
+
+      color:
+        white;
+
     }
 
-    .hero-names{
-      margin:0;
-      font-family:var(--serif);
-      font-size:clamp(46px,11vw,76px);
-      font-weight:400;
-      letter-spacing:.02em;
-      line-height:1;
-      text-shadow:0 4px 24px rgba(55,35,38,.34);
+
+    .hero-mark {
+
+      width:
+        68px;
+
+      height:
+        68px;
+
+      margin:
+        0 auto
+        20px;
+
+      border:
+        1px solid
+        rgba(
+          255,
+          255,
+          255,
+          0.8
+        );
+
+      border-radius:
+        50%;
+
+      display:
+        grid;
+
+      place-items:
+        center;
+
+      font-family:
+        var(--serif);
+
+      font-size:
+        21px;
+
+      backdrop-filter:
+        blur(4px);
+
     }
 
-    .hero-cn{
-      margin:10px 0 22px;
-      font-size:15px;
-      letter-spacing:.18em;
+
+    .hero-small {
+
+      font-size:
+        11px;
+
+      letter-spacing:
+        0.28em;
+
+      font-weight:
+        700;
+
     }
 
-    .hero-date{
-      padding-top:17px;
-      border-top:1px solid rgba(255,255,255,.52);
-      font-family:var(--serif);
-      font-size:20px;
-      letter-spacing:.13em;
+
+    .hero-bottom {
+
+      position:
+        absolute;
+
+      z-index:
+        2;
+
+      left:
+        0;
+
+      right:
+        0;
+
+      bottom:
+        0;
+
+      padding:
+
+        0
+        28px
+        38px;
+
+      color:
+        white;
+
+      text-align:
+        center;
+
     }
 
-    .tap{
-      margin-top:16px;
-      font-size:11px;
-      letter-spacing:.2em;
-      opacity:.88;
-      animation:float 1.9s ease-in-out infinite;
+
+    .hero-names {
+
+      margin:
+        0;
+
+      font-family:
+        var(--serif);
+
+      font-size:
+        clamp(
+          46px,
+          11vw,
+          76px
+        );
+
+      font-weight:
+        400;
+
+      line-height:
+        1;
+
+      text-shadow:
+
+        0
+        4px
+        24px
+        rgba(
+          55,
+          35,
+          38,
+          0.35
+        );
+
     }
 
-    @keyframes float{
-      0%,100%{transform:translateY(0);opacity:.75}
-      50%{transform:translateY(-5px);opacity:1}
+
+    .hero-cn {
+
+      margin:
+
+        12px
+        0
+        22px;
+
+      font-size:
+        15px;
+
+      letter-spacing:
+        0.18em;
+
     }
 
-    /* COUNTDOWN */
-    .countdown{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:10px;
-      margin-top:24px;
-    }
-    .timebox{
-      text-align:center;
-      padding:16px 6px;
-      border:1px solid var(--line);
-      border-radius:18px;
-      background:rgba(255,250,250,.7);
-    }
-    .num{
-      display:block;
-      font-family:var(--serif);
-      font-size:28px;
-      color:var(--wine);
-    }
-    .unit{
-      display:block;
-      margin-top:5px;
-      font-size:10px;
-      letter-spacing:.15em;
-      color:var(--muted);
+
+    .hero-date {
+
+      padding-top:
+        17px;
+
+      border-top:
+
+        1px
+        solid
+        rgba(
+          255,
+          255,
+          255,
+          0.55
+        );
+
+      font-family:
+        var(--serif);
+
+      font-size:
+        20px;
+
+      letter-spacing:
+        0.13em;
+
     }
 
-    /* INVITATION */
-    .quote{
-      margin:26px 0 0;
-      padding:22px 20px;
-      border-left:2px solid var(--pink);
-      background:rgba(248,237,237,.62);
-      border-radius:0 18px 18px 0;
-      line-height:2;
-      font-family:var(--serif);
-      font-size:17px;
-      color:#70575a;
+
+    .tap {
+
+      margin-top:
+        16px;
+
+      font-size:
+        11px;
+
+      letter-spacing:
+        0.20em;
+
+      animation:
+        float
+        1.9s
+        ease-in-out
+        infinite;
+
     }
 
-    .detail-grid{
-      margin-top:24px;
-      display:grid;
-      gap:12px;
-    }
-    .detail{
-      display:grid;
-      grid-template-columns:58px 1fr;
-      gap:12px;
-      align-items:start;
-      padding:15px 0;
-      border-bottom:1px solid var(--line);
-    }
-    .detail:last-child{border-bottom:0}
-    .detail-label{
-      color:var(--rose);
-      font-size:12px;
-      letter-spacing:.12em;
-      font-weight:700;
-    }
-    .detail-value{
-      line-height:1.7;
-      font-size:15px;
+
+    @keyframes float {
+
+      0%,
+      100% {
+
+        transform:
+          translateY(0);
+
+        opacity:
+          0.75;
+
+      }
+
+      50% {
+
+        transform:
+          translateY(-5px);
+
+        opacity:
+          1;
+
+      }
+
     }
 
-    /* SCHEDULE */
-    .timeline{
-      margin-top:25px;
-      position:relative;
-      padding-left:25px;
-    }
-    .timeline::before{
-      content:"";
-      position:absolute;
-      left:6px;top:7px;bottom:8px;
-      width:1px;background:var(--line);
-    }
-    .event{
-      position:relative;
-      padding:0 0 24px 18px;
-    }
-    .event:last-child{padding-bottom:0}
-    .event::before{
-      content:"";
-      position:absolute;
-      left:-23px;top:7px;
-      width:10px;height:10px;
-      border-radius:50%;
-      background:var(--pink-deep);
-      box-shadow:0 0 0 5px rgba(217,173,174,.18);
-    }
-    .event-time{
-      color:var(--rose);
-      font-size:12px;
-      letter-spacing:.16em;
-      font-weight:700;
-    }
-    .event-name{
-      margin-top:4px;
-      font-family:var(--serif);
-      font-size:20px;
-      color:var(--wine);
+
+    /* =========================
+       倒數計時
+       ========================= */
+
+    .countdown {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(
+          4,
+          1fr
+        );
+
+      gap:
+        10px;
+
+      margin-top:
+        24px;
+
     }
 
-    /* PHOTO GALLERY */
-    .gallery{
-      margin-top:24px;
-      display:grid;
-      grid-template-columns:1.15fr .85fr;
-      grid-template-rows:180px 180px;
-      gap:10px;
-    }
-    .gallery figure{
-      margin:0;
-      overflow:hidden;
-      border-radius:20px;
-      background:linear-gradient(135deg,#ead0d1,#f7eded);
-      position:relative;
-    }
-    .gallery figure:first-child{grid-row:1 / 3}
-    .gallery img{
-      width:100%;height:100%;
-      object-fit:cover;
-      display:block;
-      transition:transform .6s ease;
-    }
-    .gallery figure:hover img{transform:scale(1.035)}
-    .photo-fallback{
-      position:absolute;inset:0;
-      display:grid;place-items:center;
-      color:#a47d80;
-      font-family:var(--serif);
-      font-size:14px;
-      letter-spacing:.08em;
+
+    .timebox {
+
+      text-align:
+        center;
+
+      padding:
+        16px
+        6px;
+
+      border:
+
+        1px
+        solid
+        var(--line);
+
+      border-radius:
+        18px;
+
+      background:
+
+        rgba(
+          255,
+          250,
+          250,
+          0.72
+        );
+
     }
 
-    /* LOCATION */
-    .venue-card{
-      margin-top:24px;
-      padding:22px;
-      border-radius:20px;
-      background:linear-gradient(135deg,rgba(248,234,234,.88),rgba(255,255,255,.86));
-      border:1px solid var(--line);
-    }
-    .venue-name{
-      font-family:var(--serif);
-      font-size:25px;
-      color:var(--wine);
-      margin-bottom:6px;
-    }
-    .venue-address,.parking{
-      color:var(--muted);
-      line-height:1.8;
-      font-size:14px;
+
+    .num {
+
+      display:
+        block;
+
+      font-family:
+        var(--serif);
+
+      font-size:
+        28px;
+
+      color:
+        var(--wine);
+
     }
 
-    .actions{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:10px;
-      margin-top:18px;
-    }
-    .btn{
-      appearance:none;
-      border:0;
-      border-radius:999px;
-      padding:14px 18px;
-      text-decoration:none;
-      display:inline-flex;
-      justify-content:center;
-      align-items:center;
-      gap:8px;
-      cursor:pointer;
-      transition:transform .2s ease,opacity .2s ease,box-shadow .2s ease;
-      font-weight:700;
-      font-size:14px;
-    }
-    .btn:hover{transform:translateY(-1px)}
-    .btn-primary{
-      background:var(--wine);
-      color:white;
-      box-shadow:0 10px 24px rgba(111,68,72,.18);
-    }
-    .btn-soft{
-      background:#f5e4e4;
-      color:var(--wine);
+
+    .unit {
+
+      display:
+        block;
+
+      margin-top:
+        5px;
+
+      font-size:
+        10px;
+
+      letter-spacing:
+        0.12em;
+
+      color:
+        var(--muted);
+
     }
 
-    /* RSVP */
-    .form{
-      margin-top:24px;
-      display:grid;
-      gap:15px;
-    }
-    .field label{
-      display:block;
-      margin-bottom:7px;
-      color:var(--rose);
-      font-size:12px;
-      font-weight:700;
-      letter-spacing:.08em;
-    }
-    .field input,
-    .field select,
-    .field textarea{
-      width:100%;
-      border:1px solid var(--line);
-      border-radius:15px;
-      background:rgba(255,255,255,.83);
-      padding:13px 14px;
-      color:var(--ink);
-      outline:none;
-      transition:border-color .2s ease,box-shadow .2s ease;
-    }
-    .field input:focus,
-    .field select:focus,
-    .field textarea:focus{
-      border-color:var(--pink-deep);
-      box-shadow:0 0 0 3px rgba(217,173,174,.16);
-    }
-    .field textarea{min-height:100px;resize:vertical}
-    .form-note{
-      margin:2px 0 0;
-      color:var(--muted);
-      font-size:12px;
-      line-height:1.7;
+
+    /* =========================
+       邀請文字
+       ========================= */
+
+    .quote {
+
+      margin:
+        26px
+        0
+        0;
+
+      padding:
+        22px
+        20px;
+
+      border-left:
+
+        2px
+        solid
+        var(--pink);
+
+      background:
+
+        rgba(
+          248,
+          237,
+          237,
+          0.62
+        );
+
+      border-radius:
+
+        0
+        18px
+        18px
+        0;
+
+      line-height:
+        2;
+
+      font-family:
+        var(--serif);
+
+      font-size:
+        17px;
+
+      color:
+        #70575a;
+
     }
 
-    /* FOOTER */
-    footer{
-      text-align:center;
-      padding:36px 10px 20px;
-      color:var(--muted);
-    }
-    .footer-names{
-      font-family:var(--serif);
-      font-size:30px;
-      color:var(--wine);
-      margin-bottom:8px;
-    }
-    .footer-date{
-      font-size:11px;
-      letter-spacing:.22em;
+
+    .detail-grid {
+
+      margin-top:
+        24px;
+
+      display:
+        grid;
+
+      gap:
+        12px;
+
     }
 
-    /* FLOATING MUSIC */
-    .music-btn{
-      position:fixed;
-      right:18px;
-      bottom:18px;
-      z-index:30;
-      width:48px;height:48px;
-      border:1px solid rgba(255,255,255,.8);
-      border-radius:50%;
-      background:rgba(255,250,250,.86);
-      color:var(--wine);
-      box-shadow:0 10px 28px rgba(95,61,65,.17);
-      backdrop-filter:blur(12px);
-      cursor:pointer;
-      font-size:18px;
-    }
-    .music-btn.playing{animation:spin 4s linear infinite}
-    @keyframes spin{to{transform:rotate(360deg)}}
 
-    /* TOAST */
-    .toast{
-      position:fixed;
-      left:50%;
-      bottom:82px;
-      transform:translate(-50%,20px);
-      opacity:0;
-      pointer-events:none;
-      z-index:50;
-      background:#5f4447;
-      color:white;
-      padding:11px 15px;
-      border-radius:999px;
-      font-size:13px;
-      box-shadow:0 10px 30px rgba(0,0,0,.16);
-      transition:.25s ease;
-      text-align:center;
-      max-width:calc(100vw - 40px);
-    }
-    .toast.show{opacity:1;transform:translate(-50%,0)}
+    .detail {
 
-    @media (max-width:520px){
-      .page{padding-left:14px;padding-right:14px}
-      .section{padding:28px 20px;border-radius:24px}
-      .invite-card{min-height:84svh;border-radius:28px}
-      .countdown{gap:7px}
-      .num{font-size:24px}
-      .gallery{grid-template-rows:150px 150px}
-      .actions{grid-template-columns:1fr}
+      display:
+        grid;
+
+      grid-template-columns:
+        58px 1fr;
+
+      gap:
+        12px;
+
+      align-items:
+        start;
+
+      padding:
+        15px
+        0;
+
+      border-bottom:
+
+        1px
+        solid
+        var(--line);
+
     }
 
-    @media (prefers-reduced-motion:reduce){
-      *{scroll-behavior:auto!important;animation:none!important;transition:none!important}
+
+    .detail:last-child {
+
+      border-bottom:
+        0;
+
     }
+
+
+    .detail-label {
+
+      color:
+        var(--rose);
+
+      font-size:
+        12px;
+
+      letter-spacing:
+        0.12em;
+
+      font-weight:
+        700;
+
+    }
+
+
+    .detail-value {
+
+      line-height:
+        1.7;
+
+      font-size:
+        15px;
+
+    }
+
+
+    /* =========================
+       婚紗照
+       ========================= */
+
+    .gallery {
+
+      margin-top:
+        24px;
+
+      display:
+        grid;
+
+      grid-template-columns:
+
+        1.15fr
+        0.85fr;
+
+      grid-template-rows:
+
+        180px
+        180px;
+
+      gap:
+        10px;
+
+    }
+
+
+    .gallery figure {
+
+      margin:
+        0;
+
+      overflow:
+        hidden;
+
+      border-radius:
+        20px;
+
+      background:
+
+        linear-gradient(
+          135deg,
+          #ead0d1,
+          #f7eded
+        );
+
+    }
+
+
+    .gallery figure:first-child {
+
+      grid-row:
+
+        1
+        /
+        3;
+
+    }
+
+
+    .gallery img {
+
+      width:
+        100%;
+
+      height:
+        100%;
+
+      object-fit:
+        cover;
+
+      display:
+        block;
+
+      transition:
+
+        transform
+        0.6s
+        ease;
+
+    }
+
+
+    .gallery figure:hover img {
+
+      transform:
+        scale(1.035);
+
+    }
+
+
+    /* =========================
+       場地
+       ========================= */
+
+    .venue-card {
+
+      margin-top:
+        24px;
+
+      padding:
+        22px;
+
+      border-radius:
+        20px;
+
+      background:
+
+        linear-gradient(
+          135deg,
+
+          rgba(
+            248,
+            234,
+            234,
+            0.90
+          ),
+
+          rgba(
+            255,
+            255,
+            255,
+            0.88
+          )
+        );
+
+      border:
+
+        1px
+        solid
+        var(--line);
+
+    }
+
+
+    .venue-name {
+
+      font-family:
+        var(--serif);
+
+      font-size:
+        25px;
+
+      color:
+        var(--wine);
+
+      margin-bottom:
+        8px;
+
+    }
+
+
+    .venue-address,
+    .parking {
+
+      color:
+        var(--muted);
+
+      line-height:
+        1.8;
+
+      font-size:
+        14px;
+
+    }
+
+
+    .actions {
+
+      display:
+        grid;
+
+      grid-template-columns:
+
+        1fr
+        1fr;
+
+      gap:
+        10px;
+
+      margin-top:
+        18px;
+
+    }
+
+
+    .btn {
+
+      appearance:
+        none;
+
+      border:
+        0;
+
+      border-radius:
+        999px;
+
+      padding:
+        14px
+        18px;
+
+      text-decoration:
+        none;
+
+      display:
+        inline-flex;
+
+      justify-content:
+        center;
+
+      align-items:
+        center;
+
+      cursor:
+        pointer;
+
+      font-weight:
+        700;
+
+      font-size:
+        14px;
+
+      transition:
+
+        transform
+        0.2s
+        ease;
+
+    }
+
+
+    .btn:hover {
+
+      transform:
+        translateY(-2px);
+
+    }
+
+
+    .btn-primary {
+
+      background:
+        var(--wine);
+
+      color:
+        white;
+
+      box-shadow:
+
+        0
+        10px
+        24px
+        rgba(
+          111,
+          68,
+          72,
+          0.18
+        );
+
+    }
+
+
+    .btn-soft {
+
+      background:
+        #f5e4e4;
+
+      color:
+        var(--wine);
+
+    }
+
+
+    /* =========================
+       Footer
+       ========================= */
+
+    footer {
+
+      text-align:
+        center;
+
+      padding:
+
+        36px
+        10px
+        20px;
+
+      color:
+        var(--muted);
+
+    }
+
+
+    .footer-names {
+
+      font-family:
+        var(--serif);
+
+      font-size:
+        30px;
+
+      color:
+        var(--wine);
+
+      margin-bottom:
+        8px;
+
+    }
+
+
+    .footer-date {
+
+      font-size:
+        11px;
+
+      letter-spacing:
+        0.22em;
+
+    }
+
+
+    /* =========================
+       音樂按鈕
+       ========================= */
+
+    .music-btn {
+
+      position:
+        fixed;
+
+      right:
+        18px;
+
+      bottom:
+        18px;
+
+      z-index:
+        30;
+
+      width:
+        50px;
+
+      height:
+        50px;
+
+      border:
+
+        1px
+        solid
+        rgba(
+          255,
+          255,
+          255,
+          0.8
+        );
+
+      border-radius:
+        50%;
+
+      background:
+
+        rgba(
+          255,
+          250,
+          250,
+          0.9
+        );
+
+      color:
+        var(--wine);
+
+      box-shadow:
+
+        0
+        10px
+        28px
+        rgba(
+          95,
+          61,
+          65,
+          0.17
+        );
+
+      backdrop-filter:
+        blur(12px);
+
+      cursor:
+        pointer;
+
+      font-size:
+        20px;
+
+    }
+
+
+    .music-btn.playing {
+
+      animation:
+
+        spin
+        4s
+        linear
+        infinite;
+
+    }
+
+
+    @keyframes spin {
+
+      to {
+
+        transform:
+          rotate(360deg);
+
+      }
+
+    }
+
+
+    /* =========================
+       提示訊息
+       ========================= */
+
+    .toast {
+
+      position:
+        fixed;
+
+      left:
+        50%;
+
+      bottom:
+        82px;
+
+      transform:
+
+        translate(
+          -50%,
+          20px
+        );
+
+      opacity:
+        0;
+
+      pointer-events:
+        none;
+
+      z-index:
+        50;
+
+      background:
+        #5f4447;
+
+      color:
+        white;
+
+      padding:
+
+        11px
+        15px;
+
+      border-radius:
+        999px;
+
+      font-size:
+        13px;
+
+      box-shadow:
+
+        0
+        10px
+        30px
+        rgba(
+          0,
+          0,
+          0,
+          0.16
+        );
+
+      transition:
+        0.25s
+        ease;
+
+      text-align:
+        center;
+
+    }
+
+
+    .toast.show {
+
+      opacity:
+        1;
+
+      transform:
+
+        translate(
+          -50%,
+          0
+        );
+
+    }
+
+
+    @media (
+      max-width:
+      520px
+    ) {
+
+      .page {
+
+        padding-left:
+          14px;
+
+        padding-right:
+          14px;
+
+      }
+
+
+      .section {
+
+        padding:
+
+          28px
+          20px;
+
+        border-radius:
+          24px;
+
+      }
+
+
+      .invite-card {
+
+        min-height:
+          84svh;
+
+        border-radius:
+          28px;
+
+      }
+
+
+      .countdown {
+
+        gap:
+          7px;
+
+      }
+
+
+      .num {
+
+        font-size:
+          24px;
+
+      }
+
+
+      .gallery {
+
+        grid-template-rows:
+
+          150px
+          150px;
+
+      }
+
+
+      .actions {
+
+        grid-template-columns:
+          1fr;
+
+      }
+
+    }
+
   </style>
+
 </head>
 
+
 <body>
-  <main class="page">
 
-    <!-- 封面 -->
-    <section class="hero-wrap" aria-label="婚禮邀請封面">
-      <div class="invite-card" id="inviteCard" role="button" tabindex="0" aria-label="點擊開啟婚禮邀請">
-        <img class="hero-photo" src="./cover.jpg" alt="FLY & BEY 婚紗照"
-             onerror="this.style.display='none'">
-        <div class="hero-vignette"></div>
 
-        <div class="hero-top">
-          <div class="hero-mark">F&B</div>
-          <div class="hero-small">WEDDING INVITATION</div>
+<main class="page">
+
+
+  <!-- ========================================
+       封面
+       cover.jpg
+       ======================================== -->
+
+  <section class="hero-wrap">
+
+    <div
+      class="invite-card"
+      id="inviteCard"
+    >
+
+
+      <img
+        class="hero-photo"
+        src="./cover.jpg"
+        alt="FLY & BEY 婚紗照"
+      >
+
+
+      <div class="hero-vignette"></div>
+
+
+      <div class="hero-top">
+
+        <div class="hero-mark">
+
+          F&B
+
         </div>
 
-        <div class="hero-bottom">
-          <h1 class="hero-names">FLY <span style="font-size:.55em">&</span> BEY</h1>
-          <div class="hero-cn">徐啟航 × 李潔苓</div>
-          <div class="hero-date">2026 · 10 · 10</div>
-          <div class="tap">TAP TO OPEN · 點擊開啟喜帖</div>
+
+        <div class="hero-small">
+
+          WEDDING INVITATION
+
         </div>
-      </div>
-    </section>
 
-    <!-- 倒數 -->
-    <section class="section" id="invitation">
-      <div class="eyebrow">COUNTDOWN</div>
-      <h2 class="section-title">距離我們的婚禮</h2>
-      <p class="sub" id="countdownText">期待與你一起見證這一天。</p>
-
-      <div class="countdown" aria-label="婚禮倒數">
-        <div class="timebox"><span class="num" id="days">--</span><span class="unit">DAYS</span></div>
-        <div class="timebox"><span class="num" id="hours">--</span><span class="unit">HOURS</span></div>
-        <div class="timebox"><span class="num" id="minutes">--</span><span class="unit">MINS</span></div>
-        <div class="timebox"><span class="num" id="seconds">--</span><span class="unit">SECS</span></div>
-      </div>
-    </section>
-
-    <!-- 邀請文字 -->
-    <section class="section">
-      <div class="eyebrow">INVITATION</div>
-      <h2 class="section-title">我們要結婚了</h2>
-      <p class="sub">誠摯邀請您一同見證，屬於我們的重要時刻。</p>
-
-      <div class="quote">
-        從相遇、相知，到決定攜手走向下一段旅程，<br>
-        我們希望在這一天，與最重要的家人與朋友分享喜悅。<br>
-        很期待在婚禮上見到你。
       </div>
 
-      <div class="detail-grid">
-        <div class="detail">
-          <div class="detail-label">新人</div>
-          <div class="detail-value">新郎｜徐啟航<br>新娘｜李潔苓</div>
+
+      <div class="hero-bottom">
+
+
+        <h1 class="hero-names">
+
+          FLY
+
+          <span
+            style="
+              font-size:
+              0.55em;
+            "
+          >
+
+            &
+
+          </span>
+
+          BEY
+
+        </h1>
+
+
+        <div class="hero-cn">
+
+          徐啟航 × 李潔苓
+
         </div>
-        <div class="detail">
-          <div class="detail-label">日期</div>
-          <div class="detail-value">2026 年 10 月 10 日｜星期六</div>
+
+
+        <div class="hero-date">
+
+          2026 · 10 · 10
+
         </div>
-        <div class="detail">
-          <div class="detail-label">時間</div>
-          <div class="detail-value">12:00 開席｜午宴</div>
+
+
+        <div class="tap">
+
+          TAP TO OPEN · 點擊開啟喜帖
+
         </div>
-        <div class="detail">
-          <div class="detail-label">地點</div>
-          <div class="detail-value">彭園新板館｜8樓夢幻廳</div>
-        </div>
+
+
       </div>
-    </section>
 
 
-    <!-- 相片 -->
-    <section class="section">
-      <div class="eyebrow">OUR MOMENTS</div>
-      <h2 class="section-title">Our Story</h2>
-    
+    </div>
 
-      <div class="gallery">
-        <figure>
-          <div class="photo-fallback">PHOTO 01</div>
-          <img src="./photo1.jpg" alt="婚紗照 1" onerror="this.style.display='none'">
-        </figure>
-        <figure>
-          <div class="photo-fallback">PHOTO 02</div>
-          <img src="./photo2.jpg" alt="婚紗照 2" onerror="this.style.display='none'">
-        </figure>
-        <figure>
-          <div class="photo-fallback">PHOTO 03</div>
-          <img src="./photo3.jpg" alt="婚紗照 3" onerror="this.style.display='none'">
-        </figure>
+  </section>
+
+
+
+  <!-- ========================================
+       倒數計時
+       ======================================== -->
+
+  <section
+    class="section"
+    id="invitation"
+  >
+
+
+    <div class="eyebrow">
+
+      COUNTDOWN
+
+    </div>
+
+
+    <h2 class="section-title">
+
+      距離我們的婚禮
+
+    </h2>
+
+
+    <p
+      class="sub"
+      id="countdownText"
+    >
+
+      期待與你一起見證這一天。
+
+    </p>
+
+
+    <div class="countdown">
+
+
+      <div class="timebox">
+
+        <span
+          class="num"
+          id="days"
+        >
+
+          --
+
+        </span>
+
+        <span class="unit">
+
+          DAYS
+
+        </span>
+
       </div>
-    </section>
 
-    <!-- 場地與交通 -->
-    <section class="section" id="location">
-      <div class="eyebrow">LOCATION</div>
-      <h2 class="section-title">婚宴資訊</h2>
-      <p class="sub">期待在彭園新板館與你見面。</p>
 
-      <div class="venue-card">
-        <div class="venue-name">彭園新板館｜8樓夢幻廳</div>
-        <div class="venue-address">
-          新北市板橋區中山路一段 161 號<br>
-          婚宴形式｜午宴・12:00 開席
-        </div>
+      <div class="timebox">
 
-        <div class="parking" style="margin-top:14px">
-          <strong style="color:var(--wine)">停車資訊</strong><br>
-          可停放市民廣場地下停車場，提供 3 小時停車券折抵。
-        </div>
+        <span
+          class="num"
+          id="hours"
+        >
 
-        <div class="actions">
-          <a class="btn btn-primary"
-             href="https://www.google.com/maps/search/?api=1&query=%E5%BD%AD%E5%9C%92%E6%96%B0%E6%9D%BF%E9%A4%A8%20%E6%96%B0%E5%8C%97%E5%B8%82%E6%9D%BF%E6%A9%8B%E5%8D%80%E4%B8%AD%E5%B1%B1%E8%B7%AF%E4%B8%80%E6%AE%B5161%E8%99%9F"
-             target="_blank" rel="noopener">
-            開啟 Google Maps
-          </a>
+          --
 
-          <button class="btn btn-soft" type="button" id="copyAddress">
-            複製地址
-          </button>
-        </div>
+        </span>
+
+        <span class="unit">
+
+          HOURS
+
+        </span>
+
       </div>
-    </section>
 
 
-    <!-- 分享 -->
-    <section class="section">
-      <div class="eyebrow">SHARE THE JOY</div>
-      <h2 class="section-title">分享這份喜悅</h2>
-      <p class="sub">如果你想把喜帖傳給家人或同行親友，可以直接分享目前網址。</p>
+      <div class="timebox">
+
+        <span
+          class="num"
+          id="minutes"
+        >
+
+          --
+
+        </span>
+
+        <span class="unit">
+
+          MINS
+
+        </span>
+
+      </div>
+
+
+      <div class="timebox">
+
+        <span
+          class="num"
+          id="seconds"
+        >
+
+          --
+
+        </span>
+
+        <span class="unit">
+
+          SECS
+
+        </span>
+
+      </div>
+
+
+    </div>
+
+
+  </section>
+
+
+
+  <!-- ========================================
+       邀請文字
+       ======================================== -->
+
+  <section class="section">
+
+
+    <div class="eyebrow">
+
+      INVITATION
+
+    </div>
+
+
+    <h2 class="section-title">
+
+      我們要結婚了
+
+    </h2>
+
+
+    <p class="sub">
+
+      誠摯邀請您一同見證屬於我們的重要時刻。
+
+    </p>
+
+
+    <div class="quote">
+
+      從相遇、相知，
+
+      到決定攜手走向下一段旅程，
+
+      <br>
+
+      我們希望在這一天，
+
+      與最重要的家人與朋友分享喜悅。
+
+      <br>
+
+      很期待在婚禮上見到你。
+
+    </div>
+
+
+    <div class="detail-grid">
+
+
+      <div class="detail">
+
+        <div class="detail-label">
+
+          新人
+
+        </div>
+
+        <div class="detail-value">
+
+          新郎｜徐啟航
+
+          <br>
+
+          新娘｜李潔苓
+
+        </div>
+
+      </div>
+
+
+      <div class="detail">
+
+        <div class="detail-label">
+
+          日期
+
+        </div>
+
+        <div class="detail-value">
+
+          2026 年 10 月 10 日｜星期六
+
+        </div>
+
+      </div>
+
+
+      <div class="detail">
+
+        <div class="detail-label">
+
+          時間
+
+        </div>
+
+        <div class="detail-value">
+
+          12:00 開席｜午宴
+
+        </div>
+
+      </div>
+
+
+      <div class="detail">
+
+        <div class="detail-label">
+
+          地點
+
+        </div>
+
+        <div class="detail-value">
+
+          彭園新板館｜8樓夢幻廳
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+  </section>
+
+
+
+  <!-- ========================================
+       婚紗照
+       photo1.jpg
+       photo2.jpg
+       photo3.jpg
+       ======================================== -->
+
+  <section class="section">
+
+
+    <div class="eyebrow">
+
+      OUR MOMENTS
+
+    </div>
+
+
+    <h2 class="section-title">
+
+      Our Story
+
+    </h2>
+
+
+    <p class="sub">
+
+      一起走過的日子，
+
+      成為我們最珍惜的故事。
+
+    </p>
+
+
+    <div class="gallery">
+
+
+      <figure>
+
+        <img
+          src="./photo1.jpg"
+          alt="FLY & BEY 婚紗照 1"
+        >
+
+      </figure>
+
+
+      <figure>
+
+        <img
+          src="./photo2.jpg"
+          alt="FLY & BEY 婚紗照 2"
+        >
+
+      </figure>
+
+
+      <figure>
+
+        <img
+          src="./photo3.jpg"
+          alt="FLY & BEY 婚紗照 3"
+        >
+
+      </figure>
+
+
+    </div>
+
+
+  </section>
+
+
+
+  <!-- ========================================
+       婚宴資訊
+       ======================================== -->
+
+  <section
+    class="section"
+    id="location"
+  >
+
+
+    <div class="eyebrow">
+
+      LOCATION
+
+    </div>
+
+
+    <h2 class="section-title">
+
+      婚宴資訊
+
+    </h2>
+
+
+    <p class="sub">
+
+      期待在彭園新板館與你見面。
+
+    </p>
+
+
+    <div class="venue-card">
+
+
+      <div class="venue-name">
+
+        彭園新板館｜8樓夢幻廳
+
+      </div>
+
+
+      <div class="venue-address">
+
+        新北市板橋區中山路一段161號
+
+        <br>
+
+        婚宴形式｜午宴
+
+        <br>
+
+        開席時間｜12:00
+
+      </div>
+
+
+      <div
+        class="parking"
+        style="
+          margin-top:
+          16px;
+        "
+      >
+
+        <strong
+          style="
+            color:
+            var(--wine);
+          "
+        >
+
+          停車資訊
+
+        </strong>
+
+        <br>
+
+        可停放市民廣場地下停車場，
+
+        提供 3 小時停車券折抵。
+
+      </div>
+
 
       <div class="actions">
-        <button class="btn btn-primary" type="button" id="shareBtn">分享喜帖</button>
-        <button class="btn btn-soft" type="button" id="copyLink">複製喜帖網址</button>
+
+
+        <a
+          class="
+            btn
+            btn-primary
+          "
+          href="https://www.google.com/maps/search/?api=1&query=%E5%BD%AD%E5%9C%92%E6%96%B0%E6%9D%BF%E9%A4%A8%20%E6%96%B0%E5%8C%97%E5%B8%82%E6%9D%BF%E6%A9%8B%E5%8D%80%E4%B8%AD%E5%B1%B1%E8%B7%AF%E4%B8%80%E6%AE%B5161%E8%99%9F"
+          target="_blank"
+          rel="noopener"
+        >
+
+          開啟 Google Maps
+
+        </a>
+
+
+        <button
+          class="
+            btn
+            btn-soft
+          "
+          type="button"
+          id="copyAddress"
+        >
+
+          複製地址
+
+        </button>
+
+
       </div>
-    </section>
 
-    <footer>
-      <div class="footer-names">FLY & BEY</div>
-      <div class="footer-date">2026 · 10 · 10</div>
-      <div style="margin-top:12px;font-size:12px">Thank you for being part of our story.</div>
-    </footer>
-  </main>
 
-  <audio id="bgm" src="./bgm.mp3" preload="none" loop></audio>
-  <button class="music-btn" id="musicBtn" type="button" aria-label="播放或暫停背景音樂">♫</button>
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    </div>
 
-  <script>
-    // ========= 基本設定 =========
-    const weddingDate = new Date("2026-10-10T12:00:00+08:00");
-    const venueAddress = "新北市板橋區中山路一段161號";
 
-    // ========= Toast =========
-    const toast = document.getElementById("toast");
-    let toastTimer;
+  </section>
 
-    function showToast(message){
-      toast.textContent = message;
-      toast.classList.add("show");
-      clearTimeout(toastTimer);
-      toastTimer = setTimeout(() => toast.classList.remove("show"), 2400);
+
+
+  <!-- ========================================
+       分享喜帖
+       ======================================== -->
+
+  <section class="section">
+
+
+    <div class="eyebrow">
+
+      SHARE THE JOY
+
+    </div>
+
+
+    <h2 class="section-title">
+
+      分享這份喜悅
+
+    </h2>
+
+
+    <p class="sub">
+
+      可以將這份電子喜帖分享給家人與同行親友。
+
+    </p>
+
+
+    <div class="actions">
+
+
+      <button
+        class="
+          btn
+          btn-primary
+        "
+        type="button"
+        id="shareBtn"
+      >
+
+        分享喜帖
+
+      </button>
+
+
+      <button
+        class="
+          btn
+          btn-soft
+        "
+        type="button"
+        id="copyLink"
+      >
+
+        複製喜帖網址
+
+      </button>
+
+
+    </div>
+
+
+  </section>
+
+
+
+  <!-- ========================================
+       Footer
+       ======================================== -->
+
+  <footer>
+
+
+    <div class="footer-names">
+
+      FLY & BEY
+
+    </div>
+
+
+    <div class="footer-date">
+
+      2026 · 10 · 10
+
+    </div>
+
+
+    <div
+      style="
+        margin-top:
+        12px;
+
+        font-size:
+        12px;
+      "
+    >
+
+      Thank you for being part of our story.
+
+    </div>
+
+
+  </footer>
+
+
+</main>
+
+
+
+<!-- ========================================
+     背景音樂
+     GitHub 同層 bgm.mp3
+     ======================================== -->
+
+<audio
+  id="bgm"
+  src="./bgm.mp3"
+  preload="auto"
+  loop
+></audio>
+
+
+<button
+  class="music-btn"
+  id="musicBtn"
+  type="button"
+  aria-label="播放或暫停背景音樂"
+>
+
+  ♫
+
+</button>
+
+
+<div
+  class="toast"
+  id="toast"
+></div>
+
+
+
+<script>
+
+  /* =========================
+     婚禮時間
+     ========================= */
+
+  const weddingDate =
+    new Date(
+      "2026-10-10T12:00:00+08:00"
+    );
+
+
+  const venueAddress =
+    "新北市板橋區中山路一段161號";
+
+
+  /* =========================
+     提示訊息
+     ========================= */
+
+  const toast =
+    document.getElementById(
+      "toast"
+    );
+
+
+  let toastTimer;
+
+
+  function showToast(
+    message
+  ) {
+
+    toast.textContent =
+      message;
+
+
+    toast.classList.add(
+      "show"
+    );
+
+
+    clearTimeout(
+      toastTimer
+    );
+
+
+    toastTimer =
+      setTimeout(
+        () => {
+
+          toast.classList.remove(
+            "show"
+          );
+
+        },
+        2200
+      );
+
+  }
+
+
+
+  /* =========================
+     點擊封面
+     ========================= */
+
+  const inviteCard =
+    document.getElementById(
+      "inviteCard"
+    );
+
+
+  inviteCard.addEventListener(
+    "click",
+    () => {
+
+      inviteCard
+        .classList
+        .add(
+          "is-open"
+        );
+
+
+      setTimeout(
+        () => {
+
+          document
+            .getElementById(
+              "invitation"
+            )
+            .scrollIntoView({
+              behavior:
+                "smooth",
+
+              block:
+                "start"
+            });
+
+        },
+        350
+      );
+
+    }
+  );
+
+
+
+  /* =========================
+     婚禮倒數
+     ========================= */
+
+  function updateCountdown() {
+
+
+    const now =
+      new Date();
+
+
+    let diff =
+      weddingDate
+      -
+      now;
+
+
+    if (
+      diff <= 0
+    ) {
+
+      document
+        .getElementById(
+          "days"
+        )
+        .textContent =
+        "00";
+
+
+      document
+        .getElementById(
+          "hours"
+        )
+        .textContent =
+        "00";
+
+
+      document
+        .getElementById(
+          "minutes"
+        )
+        .textContent =
+        "00";
+
+
+      document
+        .getElementById(
+          "seconds"
+        )
+        .textContent =
+        "00";
+
+
+      document
+        .getElementById(
+          "countdownText"
+        )
+        .textContent =
+        "今天就是我們的大日子 ♡";
+
+
+      return;
+
     }
 
-    // ========= 封面點擊開啟 =========
-    const inviteCard = document.getElementById("inviteCard");
 
-    function openInvitation(){
-      inviteCard.classList.add("is-open");
-      setTimeout(() => {
-        document.getElementById("invitation").scrollIntoView({behavior:"smooth",block:"start"});
-      }, 360);
+
+    const days =
+      Math.floor(
+        diff
+        /
+        (
+          1000
+          *
+          60
+          *
+          60
+          *
+          24
+        )
+      );
+
+
+    diff %=
+      (
+        1000
+        *
+        60
+        *
+        60
+        *
+        24
+      );
+
+
+    const hours =
+      Math.floor(
+        diff
+        /
+        (
+          1000
+          *
+          60
+          *
+          60
+        )
+      );
+
+
+    diff %=
+      (
+        1000
+        *
+        60
+        *
+        60
+      );
+
+
+    const minutes =
+      Math.floor(
+        diff
+        /
+        (
+          1000
+          *
+          60
+        )
+      );
+
+
+    const seconds =
+      Math.floor(
+
+        (
+          diff
+          %
+          (
+            1000
+            *
+            60
+          )
+        )
+
+        /
+        1000
+
+      );
+
+
+    document
+      .getElementById(
+        "days"
+      )
+      .textContent =
+      String(
+        days
+      )
+      .padStart(
+        2,
+        "0"
+      );
+
+
+    document
+      .getElementById(
+        "hours"
+      )
+      .textContent =
+      String(
+        hours
+      )
+      .padStart(
+        2,
+        "0"
+      );
+
+
+    document
+      .getElementById(
+        "minutes"
+      )
+      .textContent =
+      String(
+        minutes
+      )
+      .padStart(
+        2,
+        "0"
+      );
+
+
+    document
+      .getElementById(
+        "seconds"
+      )
+      .textContent =
+      String(
+        seconds
+      )
+      .padStart(
+        2,
+        "0"
+      );
+
+  }
+
+
+  updateCountdown();
+
+
+  setInterval(
+    updateCountdown,
+    1000
+  );
+
+
+
+  /* =========================
+     複製文字
+     ========================= */
+
+  async function copyText(
+    text,
+    message
+  ) {
+
+
+    try {
+
+
+      await navigator
+        .clipboard
+        .writeText(
+          text
+        );
+
+
+      showToast(
+        message
+      );
+
+
     }
 
-    inviteCard.addEventListener("click", openInvitation);
-    inviteCard.addEventListener("keydown", e => {
-      if(e.key === "Enter" || e.key === " "){
-        e.preventDefault();
-        openInvitation();
-      }
-    });
 
-    // ========= 婚禮倒數 =========
-    function updateCountdown(){
-      const now = new Date();
-      let diff = weddingDate - now;
+    catch (
+      error
+    ) {
 
-      if(diff <= 0){
-        document.getElementById("days").textContent = "00";
-        document.getElementById("hours").textContent = "00";
-        document.getElementById("minutes").textContent = "00";
-        document.getElementById("seconds").textContent = "00";
-        document.getElementById("countdownText").textContent = "今天就是我們的大日子 ♡";
-        return;
-      }
 
-      const d = Math.floor(diff / (1000*60*60*24));
-      diff %= (1000*60*60*24);
-      const h = Math.floor(diff / (1000*60*60));
-      diff %= (1000*60*60);
-      const m = Math.floor(diff / (1000*60));
-      const s = Math.floor((diff % (1000*60))/1000);
+      const textarea =
+        document
+        .createElement(
+          "textarea"
+        );
 
-      document.getElementById("days").textContent = String(d).padStart(2,"0");
-      document.getElementById("hours").textContent = String(h).padStart(2,"0");
-      document.getElementById("minutes").textContent = String(m).padStart(2,"0");
-      document.getElementById("seconds").textContent = String(s).padStart(2,"0");
+
+      textarea.value =
+        text;
+
+
+      document
+        .body
+        .appendChild(
+          textarea
+        );
+
+
+      textarea.select();
+
+
+      document.execCommand(
+        "copy"
+      );
+
+
+      textarea.remove();
+
+
+      showToast(
+        message
+      );
+
+
     }
 
-    updateCountdown();
-    setInterval(updateCountdown,1000);
+  }
 
-    // ========= 複製文字 =========
-    async function copyText(text, successMessage){
-      try{
-        await navigator.clipboard.writeText(text);
-        showToast(successMessage);
-      }catch(err){
-        const textarea = document.createElement("textarea");
-        textarea.value = text;
-        textarea.style.position = "fixed";
-        textarea.style.opacity = "0";
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand("copy");
-        textarea.remove();
-        showToast(successMessage);
+
+
+  document
+    .getElementById(
+      "copyAddress"
+    )
+    .addEventListener(
+      "click",
+      () => {
+
+        copyText(
+          venueAddress,
+          "地址已複製"
+        );
+
       }
-    }
-
-    document.getElementById("copyAddress").addEventListener("click", () => {
-      copyText(venueAddress,"地址已複製");
-    });
-
-    document.getElementById("copyLink").addEventListener("click", () => {
-      copyText(location.href,"喜帖網址已複製");
-    });
+    );
 
 
-    // ========= 分享 =========
-    document.getElementById("shareBtn").addEventListener("click", async () => {
-      const shareData = {
-        title:"FLY & BEY Wedding｜2026.10.10",
-        text:"徐啟航 & 李潔苓的婚禮邀請",
-        url:location.href
-      };
 
-      if(navigator.share){
-        try{
-          await navigator.share(shareData);
-        }catch(err){}
-      }else{
-        copyText(location.href,"此瀏覽器不支援直接分享，網址已複製");
+  document
+    .getElementById(
+      "copyLink"
+    )
+    .addEventListener(
+      "click",
+      () => {
+
+        copyText(
+          window.location.href,
+          "喜帖網址已複製"
+        );
+
       }
-    });
+    );
 
-    // ========= 背景音樂 =========
-    const bgm = document.getElementById("bgm");
-    const musicBtn = document.getElementById("musicBtn");
 
-    musicBtn.addEventListener("click", async () => {
-      if(bgm.paused){
-        try{
-          await bgm.play();
-          musicBtn.classList.add("playing");
-          musicBtn.textContent = "♪";
-          showToast("背景音樂已播放");
-        }catch(err){
-          showToast("請先上傳 bgm.mp3 到網站資料夾");
+
+  /* =========================
+     分享喜帖
+     ========================= */
+
+  document
+    .getElementById(
+      "shareBtn"
+    )
+    .addEventListener(
+      "click",
+      async () => {
+
+
+        const shareData = {
+
+          title:
+            "FLY & BEY Wedding｜2026.10.10",
+
+          text:
+            "徐啟航 & 李潔苓的婚禮邀請",
+
+          url:
+            window.location.href
+
+        };
+
+
+        if (
+          navigator.share
+        ) {
+
+
+          try {
+
+
+            await navigator
+              .share(
+                shareData
+              );
+
+
+          }
+
+
+          catch (
+            error
+          ) {
+
+          }
+
+
         }
-      }else{
-        bgm.pause();
-        musicBtn.classList.remove("playing");
-        musicBtn.textContent = "♫";
-        showToast("背景音樂已暫停");
+
+
+        else {
+
+
+          copyText(
+
+            window.location.href,
+
+            "喜帖網址已複製"
+
+          );
+
+
+        }
+
+
       }
-    });
-  </script>
+    );
+
+
+
+  /* =========================
+     背景音樂
+     ========================= */
+
+  const bgm =
+    document.getElementById(
+      "bgm"
+    );
+
+
+  const musicBtn =
+    document.getElementById(
+      "musicBtn"
+    );
+
+
+  musicBtn.addEventListener(
+    "click",
+    async () => {
+
+
+      if (
+        bgm.paused
+      ) {
+
+
+        try {
+
+
+          await bgm.play();
+
+
+          musicBtn
+            .classList
+            .add(
+              "playing"
+            );
+
+
+          musicBtn.textContent =
+            "♪";
+
+
+          showToast(
+            "背景音樂已播放"
+          );
+
+
+        }
+
+
+        catch (
+          error
+        ) {
+
+
+          showToast(
+            "音樂載入失敗"
+          );
+
+
+          console.log(
+            error
+          );
+
+
+        }
+
+
+      }
+
+
+      else {
+
+
+        bgm.pause();
+
+
+        musicBtn
+          .classList
+          .remove(
+            "playing"
+          );
+
+
+        musicBtn.textContent =
+          "♫";
+
+
+        showToast(
+          "背景音樂已暫停"
+        );
+
+
+      }
+
+
+    }
+  );
+
+
+</script>
+
+
 </body>
+
 </html>
