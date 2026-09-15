@@ -472,13 +472,18 @@
   </div>
 
   <button class="music-btn" id="musicBtn" aria-label="播放背景音樂">♫</button>
-  <audio id="bgm" src="bgm.mp3" loop preload="auto"></audio>
+  <audio id="bgm" src="bgm.mp3" loop preload="none"></audio>
 
   <main class="page">
     <!-- 01 封面 -->
     <section class="hero">
-      <img src="photo01.webp" alt="FLY & BEY 婚紗照">
 
+<img
+  src="photo01.webp"
+  alt="FLY & BEY 婚紗照"
+  fetchpriority="high"
+  decoding="async"
+>
       <div class="hero-copy reveal">
         <h1 class="hero-title">Welcome To<br>Our Wedding</h1>
         <div class="hero-sub">我們要結婚了</div>
@@ -610,7 +615,8 @@
 
     <!-- 05 最後一頁 -->
     <section class="final-photo reveal">
-      <img src="photo12.webp" alt="FLY & BEY 頭紗自拍">
+      <img src="photo12.webp" alt="FLY & BEY 頭紗自拍" loading="lazy"
+  decoding="async">
 
       <div class="final-copy">
         <br><h2>Thanks</h2>
