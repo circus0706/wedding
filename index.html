@@ -1,2743 +1,665 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
-
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="description" content="FLY & BEY Wedding Invitation — 2026.10.10" />
+  <title>啟航 & 潔苓｜2026.10.10</title>
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, viewport-fit=cover"
-  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&family=Dancing+Script&family=Noto+Sans+TC:wght@300;400;500;600&family=Zen+Maru+Gothic:wght@300;400;500;700&display=swap" rel="stylesheet">
 
-  <meta
-    name="theme-color"
-    content="#f8ecec"
-  >
-
-  <title>FLY & BEY Wedding｜2026.10.10</title>
-
-  <meta
-    name="description"
-    content="徐啟航 & 李潔苓 婚禮邀請｜2026.10.10 彭園新板館 8樓夢幻廳"
-  >
-
+  
   <style>
-
-    :root {
-
-      --bg: #fffaf9;
-      --bg2: #f9eeee;
-
-      --pink: #d9adae;
-      --pink-deep: #b77f82;
-
-      --rose: #a96f74;
-      --wine: #6f4448;
-
-      --ink: #4d3c3d;
-      --muted: #8b7678;
-
-      --line:
-        rgba(143, 103, 107, 0.20);
-
-      --paper:
-        rgba(255, 255, 255, 0.84);
-
-      --shadow:
-        0 18px 55px
-        rgba(105, 70, 74, 0.13);
-
-      --serif:
-        "Songti TC",
-        "Noto Serif TC",
-        "PMingLiU",
-        "Times New Roman",
-        serif;
-
-      --sans:
-        -apple-system,
-        BlinkMacSystemFont,
-        "PingFang TC",
-        "Noto Sans TC",
-        "Microsoft JhengHei",
-        sans-serif;
-
+    :root{
+      --rose:#c6929d;
+      --rose-deep:#d6183e;
+      --paper:#fffefd;
+      --ink:#383837;
+      --muted:#1894d6;
+      --line:#383837;
     }
 
+    *{box-sizing:border-box}
 
-    * {
-
-      box-sizing: border-box;
-
+    html{
+      scroll-behavior:smooth;
+      background:#ececec;
     }
 
-
-    html {
-
-      scroll-behavior: smooth;
-
+    body{
+      margin:0;
+      color:var(--ink);
+      background:#ececec;
+      font-family:"Zen Maru Gothic","Noto Sans TC",sans-serif;
+      font-weight:400;
+      letter-spacing:.035em;
     }
 
-
-    body {
-
-      margin: 0;
-
-      color: var(--ink);
-
-      background:
-
-        radial-gradient(
-          circle at 10% 0%,
-          rgba(225, 186, 188, 0.22),
-          transparent 32%
-        ),
-
-        radial-gradient(
-          circle at 90% 20%,
-          rgba(245, 216, 214, 0.38),
-          transparent 26%
-        ),
-
-        linear-gradient(
-          180deg,
-          #fffdfc 0%,
-          var(--bg) 36%,
-          #f9efef 100%
-        );
-
-      font-family: var(--sans);
-
-      overflow-x: hidden;
-
+    img{
+      display:block;
+      width:100%;
+      height:auto;
     }
 
-
-    a {
-
-      color: inherit;
-
+    .page{
+      width:min(100%,430px);
+      margin:0 auto;
+      background:var(--paper);
+      overflow:hidden;
+      box-shadow:0 0 35px rgba(0,0,0,.1);
     }
 
+    .center{text-align:center}
 
-    button {
-
-      font: inherit;
-
+    .section{
+      position:relative;
+      padding:62px 32px;
     }
 
-
-    .page {
-
-      width: min(100%, 760px);
-
-      margin: 0 auto;
-
-      padding:
-
-        0
-        18px
-        76px;
-
+    .small{
+      font-size:12px;
+      line-height:2;
+      color:#383837;
     }
 
-
-    .section {
-
-      margin:
-        24px
-        0;
-
-      padding:
-        34px
-        24px;
-
-      background:
-        var(--paper);
-
-      border:
-        1px solid
-        rgba(255, 255, 255, 0.8);
-
-      border-radius:
-        28px;
-
-      box-shadow:
-        var(--shadow);
-
-      backdrop-filter:
-        blur(12px);
-
-      -webkit-backdrop-filter:
-        blur(12px);
-
+    /* 滾動淡入 */
+    .reveal{
+      opacity:0;
+      transform:translateY(22px);
+      transition:opacity .85s ease,transform .85s ease;
     }
 
-
-    .eyebrow {
-
-      font-size:
-        12px;
-
-      letter-spacing:
-        0.28em;
-
-      color:
-        var(--rose);
-
-      font-weight:
-        700;
-
+    .reveal.show{
+      opacity:1;
+      transform:none;
     }
 
-
-    .section-title {
-
-      margin:
-        10px
-        0
-        8px;
-
-      font-family:
-        var(--serif);
-
-      font-size:
-        clamp(
-          28px,
-          5vw,
-          38px
-        );
-
-      font-weight:
-        500;
-
-      letter-spacing:
-        0.06em;
-
-      color:
-        var(--wine);
-
+    /* Loading */
+    .loader{
+      position:fixed;
+      inset:0;
+      z-index:1000;
+      background:#fff;
+      display:grid;
+      place-items:center;
+      transition:opacity .65s ease,visibility .65s ease;
     }
 
-
-    .sub {
-
-      margin: 0;
-
-      color:
-        var(--muted);
-
-      font-size:
-        14px;
-
-      line-height:
-        1.9;
-
+    .loader.hide{
+      opacity:0;
+      visibility:hidden;
     }
 
+    .loader-inner{text-align:center}
 
-    /* =========================
-       封面
-       ========================= */
-
-    .hero-wrap {
-
-      min-height:
-        100svh;
-
-      display:
-        grid;
-
-      place-items:
-        center;
-
-      padding:
-        24px
-        0;
-
+    .loader-photo{
+      width:76px;
+      height:76px;
+      border-radius:50%;
+      overflow:hidden;
+      margin:0 auto 14px;
     }
 
-
-    .invite-card {
-
-      width:
-        min(
-          100%,
-          520px
-        );
-
-      min-height:
-        82svh;
-
-      border-radius:
-        34px;
-
-      position:
-        relative;
-
-      overflow:
-        hidden;
-
-      box-shadow:
-
-        0
-        26px
-        70px
-        rgba(
-          91,
-          60,
-          64,
-          0.22
-        );
-
-      background:
-
-        linear-gradient(
-          135deg,
-          #dfc0c0,
-          #f5e7e5
-        );
-
-      cursor:
-        pointer;
-
-      transition:
-
-        transform
-        0.7s
-        cubic-bezier(
-          0.2,
-          0.8,
-          0.2,
-          1
-        );
-
+    .loader-photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
     }
 
-
-    .invite-card.is-open {
-
-      transform:
-
-        rotateY(7deg)
-        rotateX(2deg)
-        scale(0.985);
-
+    .loader-text{
+      font-size:10px;
+      letter-spacing:.25em;
+      color:#9f8e92;
     }
 
-
-    .hero-photo {
-
-      position:
-        absolute;
-
-      inset:
-        0;
-
-      width:
-        100%;
-
-      height:
-        100%;
-
-      object-fit:
-        cover;
-
-      object-position:
-        center;
-
+    /* 封面 */
+    .hero{
+      position:relative;
+      height:100svh;
+      min-height:650px;
+      background:#fff;
+      overflow:hidden;
     }
 
-
-    .hero-vignette {
-
-      position:
-        absolute;
-
-      inset:
-        0;
-
-      background:
-
-        linear-gradient(
-          180deg,
-
-          rgba(
-            54,
-            32,
-            35,
-            0.06
-          ),
-
-          rgba(
-            54,
-            32,
-            35,
-            0.10
-          )
-          42%,
-
-          rgba(
-            54,
-            32,
-            35,
-            0.62
-          )
-          100%
-        );
-
+    .hero > img{
+      width:100%;
+      height:78%;
+      object-fit:cover;
+      object-position:center top;
     }
 
-
-    .hero-top {
-
-      position:
-        relative;
-
-      z-index:
-        2;
-
-      text-align:
-        center;
-
-      padding:
-        34px
-        26px
-        0;
-
-      color:
-        white;
-
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:38% 0 0;
+      background:linear-gradient(transparent 0%,rgba(255,255,255,.72) 48%,#fff 76%);
     }
 
-
-    .hero-mark {
-
-      width:
-        68px;
-
-      height:
-        68px;
-
-      margin:
-        0 auto
-        20px;
-
-      border:
-        1px solid
-        rgba(
-          255,
-          255,
-          255,
-          0.8
-        );
-
-      border-radius:
-        50%;
-
-      display:
-        grid;
-
-      place-items:
-        center;
-
-      font-family:
-        var(--serif);
-
-      font-size:
-        21px;
-
-      backdrop-filter:
-        blur(4px);
-
+    .hero-copy{
+      position:absolute;
+      z-index:2;
+      left:24px;
+      right:24px;
+      bottom:48px;
+      text-align:center;
     }
 
-
-    .hero-small {
-
-      font-size:
-        11px;
-
-      letter-spacing:
-        0.28em;
-
-      font-weight:
-        700;
-
+    .hero-title{
+      margin:0 0 10px;
+      font-family:"Dancing Script",cursive;
+      font-size:50px;
+      line-height:.9;
+      font-weight:400;
+      letter-spacing:0;
+      color:#d6183e;
     }
 
-
-    .hero-bottom {
-
-      position:
-        absolute;
-
-      z-index:
-        2;
-
-      left:
-        0;
-
-      right:
-        0;
-
-      bottom:
-        0;
-
-      padding:
-
-        0
-        28px
-        38px;
-
-      color:
-        white;
-
-      text-align:
-        center;
-
+    .hero-sub{
+      font-size:20px;
+      letter-spacing:.2em;
+      color:#e85f84;
+      font-weight:500;
     }
 
-
-    .hero-names {
-
-      margin:
-        0;
-
-      font-family:
-        var(--serif);
-
-      font-size:
-        clamp(
-          46px,
-          11vw,
-          76px
-        );
-
-      font-weight:
-        400;
-
-      line-height:
-        1;
-
-      text-shadow:
-
-        0
-        4px
-        24px
-        rgba(
-          55,
-          35,
-          38,
-          0.35
-        );
-
+    .hero-names{
+      margin-top:20px;
+      font-size:14px;
+      letter-spacing:.12em;
+      font-weight:500;
+      color:#383837;
     }
 
-
-    .hero-cn {
-
-      margin:
-
-        12px
-        0
-        22px;
-
-      font-size:
-        15px;
-
-      letter-spacing:
-        0.18em;
-
+    .parents{
+      margin-top:18px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:14px;
     }
 
-
-    .hero-date {
-
-      padding-top:
-        17px;
-
-      border-top:
-
-        1px
-        solid
-        rgba(
-          255,
-          255,
-          255,
-          0.55
-        );
-
-      font-family:
-        var(--serif);
-
-      font-size:
-        20px;
-
-      letter-spacing:
-        0.13em;
-
+    .parent-group{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:5px;
+      min-width:118px;
     }
 
-
-    .tap {
-
-      margin-top:
-        16px;
-
-      font-size:
-        11px;
-
-      letter-spacing:
-        0.20em;
-
-      animation:
-        float
-        1.9s
-        ease-in-out
-        infinite;
-
+    .parent-label{
+      font-size:12px;
+      letter-spacing:.1em;
+      color:#e85f84;
+      white-space:nowrap;
+      font-weight:500;
     }
 
+    .parent-name{
+      font-size:12px;
+      letter-spacing:.08em;
+      color:#383837;
+      white-space:nowrap;
+      font-weight:500;
+    }
 
-    @keyframes float {
+    .parent-divider{
+      width:1px;
+      height:34px;
+      background:#dbc9cd;
+    }
 
-      0%,
-      100% {
+    .scroll-tip{
+      position:absolute;
+      z-index:3;
+      bottom:12px;
+      left:50%;
+      transform:translateX(-50%);
+      font-size:9px;
+      letter-spacing:.25em;
+      color:#ad999e;
+      animation:bob 1.7s ease-in-out infinite;
+    }
 
-        transform:
-          translateY(0);
+    @keyframes bob{
+      50%{transform:translate(-50%,5px)}
+    }
 
-        opacity:
-          0.75;
+    /* 邀請文字 */
+    .invite h2{
+      font-size:18px;
+      font-weight:400;
+      line-height:1.9;
+      margin:0 0 18px;
+      color:#d6183e;
+    }
 
+    .invite > p{
+      font-size:12px;
+      line-height:2.1;
+      margin:0;
+      color:#383837;
+    }
+
+    .invite .small{
+      margin-top:28px;
+      color:#383837;
+    }
+
+    .celebrate-main{
+      margin-top:18px;
+      padding:0 14px;
+    }
+
+    .celebrate-main img{
+      aspect-ratio:4/5;
+      object-fit:cover;
+      border:7px solid rgba(198,146,157,.14);
+    }
+
+    /* 囍字邀請 */
+    .double-happiness{
+      font-size:80px;
+      line-height:.95;
+      margin:3px 0 14px;
+      color:#d6183e;
+      font-family:serif;
+    }
+
+    /* 婚宴資訊 */
+    .calendar{
+      margin:0 auto 32px;
+      max-width:320px;
+    }
+
+    .cal-head{
+      text-align:center;
+      margin-bottom:12px;
+    }
+
+    .cal-head .month{
+      font-family:"Dancing Script",cursive;
+      font-size:34px;
+      line-height:1.1;
+    }
+
+    .cal-head .year{
+      font-size:10px;
+      letter-spacing:.18em;
+      margin-top:4px;
+    }
+
+    .cal-grid{
+      display:grid;
+      grid-template-columns:repeat(7,1fr);
+      gap:3px;
+      text-align:center;
+      font-size:11px;
+    }
+
+    .cal-grid span{
+      padding:8px 0;
+      position:relative;
+    }
+
+    .cal-grid .dow{
+      font-size:8px;
+      color:#ad999d;
+      padding-bottom:3px;
+    }
+
+    .cal-grid .muted{color:#ddd0d3}
+
+    .cal-grid .day10{
+      color:#fff;
+      z-index:1;
+      font-weight:500;
+    }
+
+    .cal-grid .day10::before{
+      content:"♥";
+      position:absolute;
+      left:50%;
+      top:50%;
+      transform:translate(-50%,-54%);
+      color:#d6183e;
+      font-size:31px;
+      z-index:-1;
+    }
+
+    .info-box{
+      border-top:1px solid var(--line);
+      padding-top:26px;
+      margin-top:25px;
+      text-align:center;
+    }
+
+    .info-box h3{
+      font-size:16px;
+      font-weight:400;
+      margin:0 0 10px;
+       color:#1894d6;
+    }
+
+    .info-box p{
+      font-size:12px;
+      line-height:2;
+      margin:0;
+      color:#383837;
+    }
+
+    .map-btn{
+      display:inline-block;
+      margin-top:16px;
+      text-decoration:none;
+      border:1px solid var(--rose);
+      color:var(--rose-deep);
+      padding:10px 18px;
+      font-size:10px;
+      letter-spacing:.15em;
+    }
+
+    /* 最後一頁 */
+    .final-photo{
+      position:relative;
+      height:600px;
+      background:#fff;
+    }
+
+    .final-photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
+    }
+
+    .final-photo::before{
+      content:"";
+      position:absolute;
+      z-index:1;
+      inset:0;
+      background:linear-gradient(#fff 0%,rgba(255,255,255,.48) 25%,transparent 52%,rgba(255,255,255,.15) 78%,#fff 100%);
+    }
+
+    .final-copy{
+      position:absolute;
+      z-index:2;
+      left:28px;
+      right:28px;
+      bottom:36px;
+      text-align:center;
+    }
+
+    .final-copy h2{
+      font-family:"Dancing Script",cursive;
+      font-size:56px;
+      letter-spacing:0;
+      color:#d6183e;
+      font-weight:400;
+      margin:0 0 8px;
+    }
+
+    .final-copy p{
+      font-size:11px;
+      line-height:1.9;
+      color:#383837;
+      margin:0;
+    }
+
+    .final-copy p + p{
+      margin-top:8px;
+    }
+
+    /* 背景音樂 */
+    .music-btn{
+      position:fixed;
+      z-index:60;
+      right:max(14px,calc((100vw - 430px)/2 + 14px));
+      top:14px;
+      width:42px;
+      height:42px;
+      border:0;
+      border-radius:50%;
+      background:rgba(255,255,255,.9);
+      color:var(--rose-deep);
+      box-shadow:0 4px 16px rgba(0,0,0,.1);
+      backdrop-filter:blur(8px);
+      font-size:17px;
+      cursor:pointer;
+      display:grid;
+      place-items:center;
+    }
+
+    .music-btn.playing{
+      animation:spin 5s linear infinite;
+    }
+
+    @keyframes spin{
+      to{transform:rotate(360deg)}
+    }
+
+    @media (max-width:380px){
+      .parents{gap:9px}
+      .parent-group{min-width:104px}
+      .parent-name{font-size:10px}
+      .parent-label{font-size:8px}
+    }
+
+    @media (prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      .reveal{
+        opacity:1;
+        transform:none;
+        transition:none;
       }
-
-      50% {
-
-        transform:
-          translateY(-5px);
-
-        opacity:
-          1;
-
+      .music-btn.playing,
+      .scroll-tip{
+        animation:none;
       }
-
     }
-
-
-    /* =========================
-       倒數計時
-       ========================= */
-
-    .countdown {
-
-      display:
-        grid;
-
-      grid-template-columns:
-        repeat(
-          4,
-          1fr
-        );
-
-      gap:
-        10px;
-
-      margin-top:
-        24px;
-
-    }
-
-
-    .timebox {
-
-      text-align:
-        center;
-
-      padding:
-        16px
-        6px;
-
-      border:
-
-        1px
-        solid
-        var(--line);
-
-      border-radius:
-        18px;
-
-      background:
-
-        rgba(
-          255,
-          250,
-          250,
-          0.72
-        );
-
-    }
-
-
-    .num {
-
-      display:
-        block;
-
-      font-family:
-        var(--serif);
-
-      font-size:
-        28px;
-
-      color:
-        var(--wine);
-
-    }
-
-
-    .unit {
-
-      display:
-        block;
-
-      margin-top:
-        5px;
-
-      font-size:
-        10px;
-
-      letter-spacing:
-        0.12em;
-
-      color:
-        var(--muted);
-
-    }
-
-
-    /* =========================
-       邀請文字
-       ========================= */
-
-    .quote {
-
-      margin:
-        26px
-        0
-        0;
-
-      padding:
-        22px
-        20px;
-
-      border-left:
-
-        2px
-        solid
-        var(--pink);
-
-      background:
-
-        rgba(
-          248,
-          237,
-          237,
-          0.62
-        );
-
-      border-radius:
-
-        0
-        18px
-        18px
-        0;
-
-      line-height:
-        2;
-
-      font-family:
-        var(--serif);
-
-      font-size:
-        17px;
-
-      color:
-        #70575a;
-
-    }
-
-
-    .detail-grid {
-
-      margin-top:
-        24px;
-
-      display:
-        grid;
-
-      gap:
-        12px;
-
-    }
-
-
-    .detail {
-
-      display:
-        grid;
-
-      grid-template-columns:
-        58px 1fr;
-
-      gap:
-        12px;
-
-      align-items:
-        start;
-
-      padding:
-        15px
-        0;
-
-      border-bottom:
-
-        1px
-        solid
-        var(--line);
-
-    }
-
-
-    .detail:last-child {
-
-      border-bottom:
-        0;
-
-    }
-
-
-    .detail-label {
-
-      color:
-        var(--rose);
-
-      font-size:
-        12px;
-
-      letter-spacing:
-        0.12em;
-
-      font-weight:
-        700;
-
-    }
-
-
-    .detail-value {
-
-      line-height:
-        1.7;
-
-      font-size:
-        15px;
-
-    }
-
-
-    /* =========================
-       婚紗照
-       ========================= */
-
-    .gallery {
-
-      margin-top:
-        24px;
-
-      display:
-        grid;
-
-      grid-template-columns:
-
-        1.15fr
-        0.85fr;
-
-      grid-template-rows:
-
-        180px
-        180px;
-
-      gap:
-        10px;
-
-    }
-
-
-    .gallery figure {
-
-      margin:
-        0;
-
-      overflow:
-        hidden;
-
-      border-radius:
-        20px;
-
-      background:
-
-        linear-gradient(
-          135deg,
-          #ead0d1,
-          #f7eded
-        );
-
-    }
-
-
-    .gallery figure:first-child {
-
-      grid-row:
-
-        1
-        /
-        3;
-
-    }
-
-
-    .gallery img {
-
-      width:
-        100%;
-
-      height:
-        100%;
-
-      object-fit:
-        cover;
-
-      display:
-        block;
-
-      transition:
-
-        transform
-        0.6s
-        ease;
-
-    }
-
-
-    .gallery figure:hover img {
-
-      transform:
-        scale(1.035);
-
-    }
-
-
-    /* =========================
-       場地
-       ========================= */
-
-    .venue-card {
-
-      margin-top:
-        24px;
-
-      padding:
-        22px;
-
-      border-radius:
-        20px;
-
-      background:
-
-        linear-gradient(
-          135deg,
-
-          rgba(
-            248,
-            234,
-            234,
-            0.90
-          ),
-
-          rgba(
-            255,
-            255,
-            255,
-            0.88
-          )
-        );
-
-      border:
-
-        1px
-        solid
-        var(--line);
-
-    }
-
-
-    .venue-name {
-
-      font-family:
-        var(--serif);
-
-      font-size:
-        25px;
-
-      color:
-        var(--wine);
-
-      margin-bottom:
-        8px;
-
-    }
-
-
-    .venue-address,
-    .parking {
-
-      color:
-        var(--muted);
-
-      line-height:
-        1.8;
-
-      font-size:
-        14px;
-
-    }
-
-
-    .actions {
-
-      display:
-        grid;
-
-      grid-template-columns:
-
-        1fr
-        1fr;
-
-      gap:
-        10px;
-
-      margin-top:
-        18px;
-
-    }
-
-
-    .btn {
-
-      appearance:
-        none;
-
-      border:
-        0;
-
-      border-radius:
-        999px;
-
-      padding:
-        14px
-        18px;
-
-      text-decoration:
-        none;
-
-      display:
-        inline-flex;
-
-      justify-content:
-        center;
-
-      align-items:
-        center;
-
-      cursor:
-        pointer;
-
-      font-weight:
-        700;
-
-      font-size:
-        14px;
-
-      transition:
-
-        transform
-        0.2s
-        ease;
-
-    }
-
-
-    .btn:hover {
-
-      transform:
-        translateY(-2px);
-
-    }
-
-
-    .btn-primary {
-
-      background:
-        var(--wine);
-
-      color:
-        white;
-
-      box-shadow:
-
-        0
-        10px
-        24px
-        rgba(
-          111,
-          68,
-          72,
-          0.18
-        );
-
-    }
-
-
-    .btn-soft {
-
-      background:
-        #f5e4e4;
-
-      color:
-        var(--wine);
-
-    }
-
-
-    /* =========================
-       Footer
-       ========================= */
-
-    footer {
-
-      text-align:
-        center;
-
-      padding:
-
-        36px
-        10px
-        20px;
-
-      color:
-        var(--muted);
-
-    }
-
-
-    .footer-names {
-
-      font-family:
-        var(--serif);
-
-      font-size:
-        30px;
-
-      color:
-        var(--wine);
-
-      margin-bottom:
-        8px;
-
-    }
-
-
-    .footer-date {
-
-      font-size:
-        11px;
-
-      letter-spacing:
-        0.22em;
-
-    }
-
-
-    /* =========================
-       音樂按鈕
-       ========================= */
-
-    .music-btn {
-
-      position:
-        fixed;
-
-      right:
-        18px;
-
-      bottom:
-        18px;
-
-      z-index:
-        30;
-
-      width:
-        50px;
-
-      height:
-        50px;
-
-      border:
-
-        1px
-        solid
-        rgba(
-          255,
-          255,
-          255,
-          0.8
-        );
-
-      border-radius:
-        50%;
-
-      background:
-
-        rgba(
-          255,
-          250,
-          250,
-          0.9
-        );
-
-      color:
-        var(--wine);
-
-      box-shadow:
-
-        0
-        10px
-        28px
-        rgba(
-          95,
-          61,
-          65,
-          0.17
-        );
-
-      backdrop-filter:
-        blur(12px);
-
-      cursor:
-        pointer;
-
-      font-size:
-        20px;
-
-    }
-
-
-    .music-btn.playing {
-
-      animation:
-
-        spin
-        4s
-        linear
-        infinite;
-
-    }
-
-
-    @keyframes spin {
-
-      to {
-
-        transform:
-          rotate(360deg);
-
-      }
-
-    }
-
-
-    /* =========================
-       提示訊息
-       ========================= */
-
-    .toast {
-
-      position:
-        fixed;
-
-      left:
-        50%;
-
-      bottom:
-        82px;
-
-      transform:
-
-        translate(
-          -50%,
-          20px
-        );
-
-      opacity:
-        0;
-
-      pointer-events:
-        none;
-
-      z-index:
-        50;
-
-      background:
-        #5f4447;
-
-      color:
-        white;
-
-      padding:
-
-        11px
-        15px;
-
-      border-radius:
-        999px;
-
-      font-size:
-        13px;
-
-      box-shadow:
-
-        0
-        10px
-        30px
-        rgba(
-          0,
-          0,
-          0,
-          0.16
-        );
-
-      transition:
-        0.25s
-        ease;
-
-      text-align:
-        center;
-
-    }
-
-
-    .toast.show {
-
-      opacity:
-        1;
-
-      transform:
-
-        translate(
-          -50%,
-          0
-        );
-
-    }
-
-
-    @media (
-      max-width:
-      520px
-    ) {
-
-      .page {
-
-        padding-left:
-          14px;
-
-        padding-right:
-          14px;
-
-      }
-
-
-      .section {
-
-        padding:
-
-          28px
-          20px;
-
-        border-radius:
-          24px;
-
-      }
-
-
-      .invite-card {
-
-        min-height:
-          84svh;
-
-        border-radius:
-          28px;
-
-      }
-
-
-      .countdown {
-
-        gap:
-          7px;
-
-      }
-
-
-      .num {
-
-        font-size:
-          24px;
-
-      }
-
-
-      .gallery {
-
-        grid-template-rows:
-
-          150px
-          150px;
-
-      }
-
-
-      .actions {
-
-        grid-template-columns:
-          1fr;
-
-      }
-
-    }
-
   </style>
-
 </head>
 
-
 <body>
-
-
-<main class="page">
-
-
-  <!-- ========================================
-       封面
-       cover.jpg
-       ======================================== -->
-
-  <section class="hero-wrap">
-
-    <div
-      class="invite-card"
-      id="inviteCard"
-    >
-
-
-      <img
-        class="hero-photo"
-        src="https://raw.githubusercontent.com/circus0706/wedding/main/cover.jpg"
-        alt="FLY & BEY 婚紗照"
-      >
-
-
-      <div class="hero-vignette"></div>
-
-
-      <div class="hero-top">
-
-        <div class="hero-mark">
-
-          F&B
-
-        </div>
-
-
-        <div class="hero-small">
-
-          WEDDING INVITATION
-
-        </div>
-
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-photo">
+        <img src="photo01.webp" alt="">
       </div>
-
-
-      <div class="hero-bottom">
-
-
-        <h1 class="hero-names">
-
-          FLY
-
-          <span
-            style="
-              font-size:
-              0.55em;
-            "
-          >
-
-            &
-
-          </span>
-
-          BEY
-
-        </h1>
-
-
-        <div class="hero-cn">
-
-          徐啟航 × 李潔苓
-
-        </div>
-
-
-        <div class="hero-date">
-
-          2026 · 10 · 10
-
-        </div>
-
-
-        <div class="tap">
-
-          TAP TO OPEN · 點擊開啟喜帖
-
-        </div>
-
-
-      </div>
-
-
+      <div class="loader-text">LOADING OUR STORY...</div>
     </div>
+  </div>
 
-  </section>
+  <button class="music-btn" id="musicBtn" aria-label="播放背景音樂">♫</button>
+  <audio id="bgm" src="bgm.mp3" loop preload="auto"></audio>
 
+  <main class="page">
+    <!-- 01 封面 -->
+    <section class="hero">
+      <img src="photo01.webp" alt="FLY & BEY 婚紗照">
 
+      <div class="hero-copy reveal">
+        <h1 class="hero-title">Welcome To<br>Our Wedding</h1>
+        <div class="hero-sub">我們要結婚了</div>
+        <div class="hero-names">徐啟航　×　李潔苓</div>
 
-  <!-- ========================================
-       倒數計時
-       ======================================== -->
+        <div class="parents" aria-label="雙方主婚人">
+          <div class="parent-group">
+            <span class="parent-label">男方主婚人</span>
+            <span class="parent-name">徐新浩　葉麗敏</span>
+          </div>
 
-  <section
-    class="section"
-    id="invitation"
-  >
+          <div class="parent-divider" aria-hidden="true"></div>
 
-
-    <div class="eyebrow">
-
-      COUNTDOWN
-
-    </div>
-
-
-    <h2 class="section-title">
-
-      距離我們的婚禮
-
-    </h2>
-
-
-    <p
-      class="sub"
-      id="countdownText"
-    >
-
-      期待與你一起見證這一天。
-
-    </p>
-
-
-    <div class="countdown">
-
-
-      <div class="timebox">
-
-        <span
-          class="num"
-          id="days"
-        >
-
-          --
-
-        </span>
-
-        <span class="unit">
-
-          DAYS
-
-        </span>
-
+          <div class="parent-group">
+            <span class="parent-label">女方主婚人</span>
+            <span class="parent-name">李和興　陳雲昭</span>
+          </div>
+        </div>
       </div>
 
+      <div class="scroll-tip">SCROLL ↓</div>
+    </section>
 
-      <div class="timebox">
+    <!-- 02 邀請文字＋照片 -->
+    <section class="section invite center reveal">
+      <h2>我們其實一樣，在小事中長大<br>用不同的模樣，學會了愛。</h2>
+      <p>從相識、相知，到決定牽著彼此走下去，<br>我們想把這份幸福分享給重要的你。<br>當「我」慢慢變成「我們」。</p>
 
-        <span
-          class="num"
-          id="hours"
-        >
-
-          --
-
-        </span>
-
-        <span class="unit">
-
-          HOURS
-
-        </span>
-
+      <div class="celebrate-main">
+        <img src="photo10.webp" alt="婚紗照">
       </div>
-
-
-      <div class="timebox">
-
-        <span
-          class="num"
-          id="minutes"
-        >
-
-          --
-
-        </span>
-
-        <span class="unit">
-
-          MINS
-
-        </span>
-
+      <div class="celebrate-main">
+        <img src="photo0.webp" alt="婚紗照">
       </div>
+    </section>
 
-
-      <div class="timebox">
-
-        <span
-          class="num"
-          id="seconds"
-        >
-
-          --
-
-        </span>
-
-        <span class="unit">
-
-          SECS
-
-        </span>
-
+    <!-- 03 囍字邀請 -->
+    <section class="section center reveal">
+      <div class="double-happiness">囍</div>
+      <p class="small">2026 年 10 月 10 日<br>請把這一天留給我們<br>誠摯邀請您<br>一起見證我們的重要時刻</p>
+    </section>
+      <div class="celebrate-main">
+        <img src="photo06.webp" alt="戒指照">
       </div>
-
-
-    </div>
-
-
-  </section>
-
-
-
-  <!-- ========================================
-       邀請文字
-       ======================================== -->
-
-  <section class="section">
-
-
-    <div class="eyebrow">
-
-      INVITATION
-
-    </div>
-
-
-    <h2 class="section-title">
-
-      我們要結婚了
-
-    </h2>
-
-
-    <p class="sub">
-
-      誠摯邀請您一同見證屬於我們的重要時刻。
-
-    </p>
-
-
-    <div class="quote">
-
-      從相遇、相知，
-
-      到決定攜手走向下一段旅程，
-
-      <br>
-
-      我們希望在這一天，
-
-      與最重要的家人與朋友分享喜悅。
-
-      <br>
-
-      很期待在婚禮上見到你。
-
-    </div>
-
-
-    <div class="detail-grid">
-
-
-      <div class="detail">
-
-        <div class="detail-label">
-
-          新人
-
+    <!-- 04 婚宴資訊 -->
+    <section class="section reveal">
+      <div class="calendar" aria-label="2026年10月月曆">
+        <div class="cal-head">
+          <div class="month">OCTOBER</div>
+          <div class="year">2026</div>
         </div>
 
-        <div class="detail-value">
+        <div class="cal-grid">
+          <span class="dow">SUN</span>
+          <span class="dow">MON</span>
+          <span class="dow">TUE</span>
+          <span class="dow">WED</span>
+          <span class="dow">THU</span>
+          <span class="dow">FRI</span>
+          <span class="dow">SAT</span>
 
-          新郎｜徐啟航
+          <span class="muted">27</span>
+          <span class="muted">28</span>
+          <span class="muted">29</span>
+          <span class="muted">30</span>
+          <span>1</span>
+          <span>2</span>
+          <span>3</span>
 
-          <br>
+          <span>4</span>
+          <span>5</span>
+          <span>6</span>
+          <span>7</span>
+          <span>8</span>
+          <span>9</span>
+          <span class="day10">10</span>
 
-          新娘｜李潔苓
+          <span>11</span>
+          <span>12</span>
+          <span>13</span>
+          <span>14</span>
+          <span>15</span>
+          <span>16</span>
+          <span>17</span>
 
+          <span>18</span>
+          <span>19</span>
+          <span>20</span>
+          <span>21</span>
+          <span>22</span>
+          <span>23</span>
+          <span>24</span>
+
+          <span>25</span>
+          <span>26</span>
+          <span>27</span>
+          <span>28</span>
+          <span>29</span>
+          <span>30</span>
+          <span>31</span>
         </div>
-
       </div>
 
-
-      <div class="detail">
-
-        <div class="detail-label">
-
-          日期
-
-        </div>
-
-        <div class="detail-value">
-
-          2026 年 10 月 10 日｜星期六
-
-        </div>
-
-      </div>
-
-
-      <div class="detail">
-
-        <div class="detail-label">
-
-          時間
-
-        </div>
-
-        <div class="detail-value">
-
-          12:00 開席｜午宴
-
-        </div>
-
-      </div>
-
-
-      <div class="detail">
-
-        <div class="detail-label">
-
-          地點
-
-        </div>
-
-        <div class="detail-value">
-
-          彭園新板館｜8樓夢幻廳
-
-        </div>
-
-      </div>
-
-
-    </div>
-
-
-  </section>
-
-
-
-  <!-- ========================================
-       婚紗照
-       photo1.jpg
-       photo2.jpg
-       photo3.jpg
-       ======================================== -->
-
-  <section class="section">
-
-
-    <div class="eyebrow">
-
-      OUR MOMENTS
-
-    </div>
-
-
-    <h2 class="section-title">
-
-      Our Story
-
-    </h2>
-
-
-    <p class="sub">
-
-      一起走過的日子，
-
-      成為我們最珍惜的故事。
-
-    </p>
-
-
-    <div class="gallery">
-
-
-      <figure>
-
-        <img
-          src="https://raw.githubusercontent.com/circus0706/wedding/main/photo1.jpg"
-          alt="FLY & BEY 婚紗照 1"
-        >
-
-      </figure>
-
-
-      <figure>
-
-        <img
-          src="https://raw.githubusercontent.com/circus0706/wedding/main/photo2.jpg"
-          alt="FLY & BEY 婚紗照 2"
-        >
-
-      </figure>
-
-
-      <figure>
-
-        <img
-          src="https://raw.githubusercontent.com/circus0706/wedding/main/photo3.jpg"
-          alt="FLY & BEY 婚紗照 3"
-        >
-
-      </figure>
-
-
-    </div>
-
-
-  </section>
-
-
-
-  <!-- ========================================
-       婚宴資訊
-       ======================================== -->
-
-  <section
-    class="section"
-    id="location"
-  >
-
-
-    <div class="eyebrow">
-
-      LOCATION
-
-    </div>
-
-
-    <h2 class="section-title">
-
-      婚宴資訊
-
-    </h2>
-
-
-    <p class="sub">
-
-      期待在彭園新板館與你見面。
-
-    </p>
-
-
-    <div class="venue-card">
-
-
-      <div class="venue-name">
-
-        彭園新板館｜8樓夢幻廳
-
-      </div>
-
-
-      <div class="venue-address">
-
-        新北市板橋區中山路一段161號
-
-        <br>
-
-        婚宴形式｜午宴
-
-        <br>
-
-        開席時間｜12:00
-
-      </div>
-
-
-      <div
-        class="parking"
-        style="
-          margin-top:
-          16px;
-        "
-      >
-
-        <strong
-          style="
-            color:
-            var(--wine);
-          "
-        >
-
-          停車資訊
-
-        </strong>
-
-        <br>
-
-        可停放市民廣場地下停車場，
-
-        提供 3 小時停車券折抵。
-
-      </div>
-
-
-      <div class="actions">
-
+      <div class="info-box">
+        <h3>彭園新板館   8 樓夢幻廳</h3>
+        <p>
+          新北市板橋區中山路一段 161 號<br>
+          星期六  午宴<br>12:00 入席<br>12:30 開席
+        </p>
 
         <a
-          class="
-            btn
-            btn-primary
-          "
-          href="https://www.google.com/maps/search/?api=1&query=%E5%BD%AD%E5%9C%92%E6%96%B0%E6%9D%BF%E9%A4%A8%20%E6%96%B0%E5%8C%97%E5%B8%82%E6%9D%BF%E6%A9%8B%E5%8D%80%E4%B8%AD%E5%B1%B1%E8%B7%AF%E4%B8%80%E6%AE%B5161%E8%99%9F"
+          class="map-btn"
+          href="https://www.google.com/maps/search/?api=1&query=%E5%BD%AD%E5%9C%92%E6%96%B0%E6%9D%BF%E9%A4%A8"
           target="_blank"
           rel="noopener"
-        >
-
-          開啟 Google Maps
-
-        </a>
-
-
-        <button
-          class="
-            btn
-            btn-soft
-          "
-          type="button"
-          id="copyAddress"
-        >
-
-          複製地址
-
-        </button>
-
-
+        >GOOGLE MAP</a>
       </div>
 
-
-    </div>
-
-
-  </section>
-
-
-
-  <!-- ========================================
-       分享喜帖
-       ======================================== -->
-
-  <section class="section">
-
-
-    <div class="eyebrow">
-
-      SHARE THE JOY
-
-    </div>
-
-
-    <h2 class="section-title">
-
-      分享這份喜悅
-
-    </h2>
-
-
-    <p class="sub">
-
-      可以將這份電子喜帖分享給家人與同行親友。
-
-    </p>
-
-
-    <div class="actions">
-
-
-      <button
-        class="
-          btn
-          btn-primary
-        "
-        type="button"
-        id="shareBtn"
-      >
-
-        分享喜帖
-
-      </button>
-
-
-      <button
-        class="
-          btn
-          btn-soft
-        "
-        type="button"
-        id="copyLink"
-      >
-
-        複製喜帖網址
-
-      </button>
-
-
-    </div>
-
-
-  </section>
-
-
-
-  <!-- ========================================
-       Footer
-       ======================================== -->
-
-  <footer>
-
-
-    <div class="footer-names">
-
-      FLY & BEY
-
-    </div>
-
-
-    <div class="footer-date">
-
-      2026 · 10 · 10
-
-    </div>
-
-
-    <div
-      style="
-        margin-top:
-        12px;
-
-        font-size:
-        12px;
-      "
-    >
-
-      Thank you for being part of our story.
-
-    </div>
-
-
-  </footer>
-
-
-</main>
-
-
-
-<!-- ========================================
-     背景音樂
-     GitHub 同層 bgm.mp3
-     ======================================== -->
-
-<audio
-  id="bgm"
-  src="./bgm.mp3"
-  preload="auto"
-  loop
-></audio>
-
-
-<button
-  class="music-btn"
-  id="musicBtn"
-  type="button"
-  aria-label="播放或暫停背景音樂"
->
-
-  ♫
-
-</button>
-
-
-<div
-  class="toast"
-  id="toast"
-></div>
-
-
-
-<script>
-
-  /* =========================
-     婚禮時間
-     ========================= */
-
-  const weddingDate =
-    new Date(
-      "2026-10-10T12:00:00+08:00"
-    );
-
-
-  const venueAddress =
-    "新北市板橋區中山路一段161號";
-
-
-  /* =========================
-     提示訊息
-     ========================= */
-
-  const toast =
-    document.getElementById(
-      "toast"
-    );
-
-
-  let toastTimer;
-
-
-  function showToast(
-    message
-  ) {
-
-    toast.textContent =
-      message;
-
-
-    toast.classList.add(
-      "show"
-    );
-
-
-    clearTimeout(
-      toastTimer
-    );
-
-
-    toastTimer =
-      setTimeout(
-        () => {
-
-          toast.classList.remove(
-            "show"
-          );
-
-        },
-        2200
-      );
-
-  }
-
-
-
-  /* =========================
-     點擊封面
-     ========================= */
-
-  const inviteCard =
-    document.getElementById(
-      "inviteCard"
-    );
-
-
-  inviteCard.addEventListener(
-    "click",
-    () => {
-
-      inviteCard
-        .classList
-        .add(
-          "is-open"
-        );
-
-
-      setTimeout(
-        () => {
-
-          document
-            .getElementById(
-              "invitation"
-            )
-            .scrollIntoView({
-              behavior:
-                "smooth",
-
-              block:
-                "start"
-            });
-
-        },
-        350
-      );
-
-    }
-  );
-
-
-
-  /* =========================
-     婚禮倒數
-     ========================= */
-
-  function updateCountdown() {
-
-
-    const now =
-      new Date();
-
-
-    let diff =
-      weddingDate
-      -
-      now;
-
-
-    if (
-      diff <= 0
-    ) {
-
-      document
-        .getElementById(
-          "days"
-        )
-        .textContent =
-        "00";
-
-
-      document
-        .getElementById(
-          "hours"
-        )
-        .textContent =
-        "00";
-
-
-      document
-        .getElementById(
-          "minutes"
-        )
-        .textContent =
-        "00";
-
-
-      document
-        .getElementById(
-          "seconds"
-        )
-        .textContent =
-        "00";
-
-
-      document
-        .getElementById(
-          "countdownText"
-        )
-        .textContent =
-        "今天就是我們的大日子 ♡";
-
-
-      return;
-
-    }
-
-
-
-    const days =
-      Math.floor(
-        diff
-        /
-        (
-          1000
-          *
-          60
-          *
-          60
-          *
-          24
-        )
-      );
-
-
-    diff %=
-      (
-        1000
-        *
-        60
-        *
-        60
-        *
-        24
-      );
-
-
-    const hours =
-      Math.floor(
-        diff
-        /
-        (
-          1000
-          *
-          60
-          *
-          60
-        )
-      );
-
-
-    diff %=
-      (
-        1000
-        *
-        60
-        *
-        60
-      );
-
-
-    const minutes =
-      Math.floor(
-        diff
-        /
-        (
-          1000
-          *
-          60
-        )
-      );
-
-
-    const seconds =
-      Math.floor(
-
-        (
-          diff
-          %
-          (
-            1000
-            *
-            60
-          )
-        )
-
-        /
-        1000
-
-      );
-
-
-    document
-      .getElementById(
-        "days"
-      )
-      .textContent =
-      String(
-        days
-      )
-      .padStart(
-        2,
-        "0"
-      );
-
-
-    document
-      .getElementById(
-        "hours"
-      )
-      .textContent =
-      String(
-        hours
-      )
-      .padStart(
-        2,
-        "0"
-      );
-
-
-    document
-      .getElementById(
-        "minutes"
-      )
-      .textContent =
-      String(
-        minutes
-      )
-      .padStart(
-        2,
-        "0"
-      );
-
-
-    document
-      .getElementById(
-        "seconds"
-      )
-      .textContent =
-      String(
-        seconds
-      )
-      .padStart(
-        2,
-        "0"
-      );
-
-  }
-
-
-  updateCountdown();
-
-
-  setInterval(
-    updateCountdown,
-    1000
-  );
-
-
-
-  /* =========================
-     複製文字
-     ========================= */
-
-  async function copyText(
-    text,
-    message
-  ) {
-
-
-    try {
-
-
-      await navigator
-        .clipboard
-        .writeText(
-          text
-        );
-
-
-      showToast(
-        message
-      );
-
-
-    }
-
-
-    catch (
-      error
-    ) {
-
-
-      const textarea =
-        document
-        .createElement(
-          "textarea"
-        );
-
-
-      textarea.value =
-        text;
-
-
-      document
-        .body
-        .appendChild(
-          textarea
-        );
-
-
-      textarea.select();
-
-
-      document.execCommand(
-        "copy"
-      );
-
-
-      textarea.remove();
-
-
-      showToast(
-        message
-      );
-
-
-    }
-
-  }
-
-
-
-  document
-    .getElementById(
-      "copyAddress"
-    )
-    .addEventListener(
-      "click",
-      () => {
-
-        copyText(
-          venueAddress,
-          "地址已複製"
-        );
-
-      }
-    );
-
-
-
-  document
-    .getElementById(
-      "copyLink"
-    )
-    .addEventListener(
-      "click",
-      () => {
-
-        copyText(
-          window.location.href,
-          "喜帖網址已複製"
-        );
-
-      }
-    );
-
-
-
-  /* =========================
-     分享喜帖
-     ========================= */
-
-  document
-    .getElementById(
-      "shareBtn"
-    )
-    .addEventListener(
-      "click",
-      async () => {
-
-
-        const shareData = {
-
-          title:
-            "FLY & BEY Wedding｜2026.10.10",
-
-          text:
-            "徐啟航 & 李潔苓的婚禮邀請",
-
-          url:
-            window.location.href
-
-        };
-
-
-        if (
-          navigator.share
-        ) {
-
-
-          try {
-
-
-            await navigator
-              .share(
-                shareData
-              );
-
-
-          }
-
-
-          catch (
-            error
-          ) {
-
-          }
-
-
+      <div class="info-box">
+        <h3>交通／停車資訊</h3>
+        <p>
+          可停放市民廣場地下停車場<br>
+          提供 3 小時汽車停車券折抵<br>
+             <img src="photo98.webp" alt="交通照">
+             <img src="photo99.webp" alt="電梯照">
+        </p>
+      </div>
+    </section>
+
+    <!-- 05 最後一頁 -->
+    <section class="final-photo reveal">
+      <img src="photo12.webp" alt="FLY & BEY 頭紗自拍">
+
+      <div class="final-copy">
+        <br><h2>Thanks</h2>
+        <br><br><p>期待在這一天<br>看見每一位重要的你<br>婚禮見</p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('loader').classList.add('hide');
+      }, 850);
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
         }
+      });
+    }, {threshold:.12});
 
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 
-        else {
+    const bgm = document.getElementById('bgm');
+    const btn = document.getElementById('musicBtn');
+    let playing = false;
 
-
-          copyText(
-
-            window.location.href,
-
-            "喜帖網址已複製"
-
-          );
-
-
-        }
-
-
-      }
-    );
-
-
-
-  /* =========================
-     背景音樂
-     ========================= */
-
-  const bgm =
-    document.getElementById(
-      "bgm"
-    );
-
-
-  const musicBtn =
-    document.getElementById(
-      "musicBtn"
-    );
-
-
-  musicBtn.addEventListener(
-    "click",
-    async () => {
-
-
-      if (
-        bgm.paused
-      ) {
-
-
-        try {
-
-
+    btn.addEventListener('click', async () => {
+      try{
+        if(!playing){
           await bgm.play();
-
-
-          musicBtn
-            .classList
-            .add(
-              "playing"
-            );
-
-
-          musicBtn.textContent =
-            "♪";
-
-
-          showToast(
-            "背景音樂已播放"
-          );
-
-
+          playing = true;
+          btn.textContent = '♪';
+          btn.classList.add('playing');
+          btn.setAttribute('aria-label','暫停背景音樂');
+        }else{
+          bgm.pause();
+          playing = false;
+          btn.textContent = '♫';
+          btn.classList.remove('playing');
+          btn.setAttribute('aria-label','播放背景音樂');
         }
-
-
-        catch (
-          error
-        ) {
-
-
-          showToast(
-            "音樂載入失敗"
-          );
-
-
-          console.log(
-            error
-          );
-
-
-        }
-
-
+      }catch(error){
+        console.log(error);
       }
-
-
-      else {
-
-
-        bgm.pause();
-
-
-        musicBtn
-          .classList
-          .remove(
-            "playing"
-          );
-
-
-        musicBtn.textContent =
-          "♫";
-
-
-        showToast(
-          "背景音樂已暫停"
-        );
-
-
-      }
-
-
-    }
-  );
-
-
-</script>
-
-
+    });
+  </script>
 </body>
-
 </html>
